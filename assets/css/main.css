@@ -32,9 +32,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
-body {
-  font-family: 'Product Sans', Fallback, sans-serif;
-}
+
 
 ol, ul {
 	list-style: none;
@@ -2175,8 +2173,5 @@ input, select, textarea {
 			}
 
 		}
-		@font-face {
-  font-family: 'Product Sans';
-  src: url('https://github.com/epicX67/epicX67.github.io/blob/master/assets/fonts/product_sans.ttf') format('truetype');
-}
+		
 		

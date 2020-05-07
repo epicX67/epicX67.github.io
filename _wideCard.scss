@@ -94,8 +94,6 @@ $bgClr: #e1f6ff;
             width: 100%;
         }
         .btnMore{
-            //position: absolute;
-            //bottom: 0;
             margin-top: 5px;
             font-family: productSans;
             font-size: .8rem;
@@ -103,11 +101,12 @@ $bgClr: #e1f6ff;
             border-radius: 20px;
             border-color: $sClr;
             color: $pClr;
-            height: 27px;
-            width: 40%;
+            height: 28px;
+            width: 35%;
             border-style: solid;
             transition-property: background,color,border-color,box-shadow;
             transition-duration: 280ms;
+            padding-bottom: .08rem;
         }
         .btnMore:focus,
         .btnMore:hover{
@@ -150,8 +149,8 @@ $bgClr: #e1f6ff;
                 padding-bottom: .4rem;
             }
             .btnMore{
-                width: 85px;
-                font-size: .6rem;
+                width: 6rem;
+                font-size: .75rem;
             }
         }
     }

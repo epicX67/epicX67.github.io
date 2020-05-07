@@ -83,8 +83,6 @@ body{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    //gap: 4vw;
-
 }
 .homeContainer{
     width: clamp(10rem,28vw,15rem);
@@ -94,7 +92,6 @@ body{
     align-items: flex-start;
     justify-content: start;
     margin-left: 2vw;
-    //gap: 2rem;
     h1{
         font-family: $subFont;
         font-size: 5rem;
@@ -264,7 +261,8 @@ body{
                 font-size: 1.2rem;
                 font-family: Arciform;
                 line-height: 1.7em;
-                letter-spacing: .2em;
+                letter-spacing: .15em;
+                word-spacing: .4rem;
             }
         } 
         .bgContainer{
@@ -289,7 +287,8 @@ body{
         font-size: 1.2rem;
         font-family: Arciform;
         line-height: 1.7em;
-        letter-spacing: .2em;
+        letter-spacing: .15em;
+        word-spacing: .5rem;
         width: 80%;
         max-width: 950px;
         padding-bottom: 1rem;
@@ -485,6 +484,7 @@ body{
         font-family: Arciform;
         letter-spacing: .2rem;
         text-align: center;
+        word-spacing: .3rem;
         a{
             margin-top: 1rem;
             text-decoration: none;

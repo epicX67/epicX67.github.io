@@ -401,14 +401,17 @@ body {
   font-family: ArcaMajora;
   font-size: 1rem;
   letter-spacing: .1rem;
-  -webkit-transition-property: font-size;
-  transition-property: font-size;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
   -webkit-transition-duration: 200ms;
           transition-duration: 200ms;
 }
 
 .nav button:hover, .nav button:focus {
-  font-size: 1.2rem;
+  -webkit-transform: scale(120%);
+          transform: scale(120%);
 }
 
 .navBtn {
@@ -455,8 +458,10 @@ body {
   padding: .2rem 2% .2rem 2%;
   text-decoration: none;
   border-radius: 20px;
-  -webkit-transition-property: opacity, font-size;
-  transition-property: opacity, font-size;
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, -webkit-transform;
+  transition-property: opacity, transform;
+  transition-property: opacity, transform, -webkit-transform;
   -webkit-transition-delay: 100ms;
           transition-delay: 100ms;
   -webkit-transition-duration: 280ms;
@@ -465,7 +470,8 @@ body {
 }
 
 .navLayout a:hover {
-  font-size: 1.3rem;
+  -webkit-transform: scale(120%);
+          transform: scale(120%);
 }
 
 #offSwitcher {

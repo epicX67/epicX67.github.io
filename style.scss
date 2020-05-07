@@ -156,11 +156,11 @@ body{
         font-family: ArcaMajora;
         font-size: 1rem;
         letter-spacing: .1rem;
-        transition-property: font-size;
+        transition-property: transform;
         transition-duration: 200ms;
     }
     button:hover,button:focus{
-        font-size: 1.2rem;
+        transform: scale(120%);
     }
 }
 //Start
@@ -194,13 +194,13 @@ body{
         padding: .2rem 2% .2rem 2%;
         text-decoration: none;
         border-radius: 20px;
-        transition-property: opacity, font-size;
+        transition-property: opacity, transform;
         transition-delay: 100ms;
         transition-duration: 280ms;
         font-family: ArcaMajora;
     }
     a:hover{
-        font-size: 1.3rem;
+        transform: scale(120%);
     }
 }
 #offSwitcher{

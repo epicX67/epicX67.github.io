@@ -1,1 +1,149 @@
-Currently under maintenance
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>epicX67</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/fdd6793349.js" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <div class="sideBar">
+        <div id="introCon" class="container enabled" onclick="test('introduction','introCon','introIco','introLabel')">
+            <div class="sideBarBtn">
+                <i id="introIco" class="fas fa-user enabled"></i>
+            </div>
+            <div id="introLabel" class="labelDiv rm enabled">Introduction</div>
+        </div>
+        <div id="eduCon" class="container" onclick="test('education','eduCon','eduIco','eduLabel')">
+            <div class="sideBarBtn">
+                <i id="eduIco" class="fas fa-book-open"></i>
+            </div>
+            <div id="eduLabel" class="labelDiv rm">Education</div>
+        </div>
+        <div id="workCon" class="container" onclick="test('work','workCon','workIco','workLabel')">
+            <div class="sideBarBtn">
+                <i id="workIco" class="fas fa-code"></i>
+            </div>
+            <div id="workLabel" class="labelDiv rm">My Work</div>
+        </div>
+        <div id="emailCon" class="container" onclick="test('email','emailCon','emailIco','emailLabel')">
+            <div class="sideBarBtn">
+                <i id="emailIco" class="fas fa-envelope"></i>
+            </div>
+            <div id="emailLabel" class="labelDiv rm">Contact</div>
+        </div>
+    </div>
+    <section id="introduction" class="section" style="display: block;">
+        <div class="upspacing"></div>
+        <p class="title sideSpacing">epic<span>X</span></p>
+        <p class="info sideSpacing"><span>H</span>i, I am Sourav Gain. A college student pursuing BCA from Eminent College of Management And Technology. I have great interests on programming and gaming.</p>
+        <div class="btnPanel sideSpacing">
+            <button onclick="test('education','eduCon','eduIco','eduLabel')">Next</button>
+        </div>
+    </section>
+    <section id="education" class="section" style="display: none; opacity: 0%;">
+        <div class="upspacing"></div>
+        <p class="title sideSpacing">Education</p>
+        <p class="info sideSpacing"><span>I</span> passed out HS from Habra High School. Now I am currently studying BCA from EMINENT COLLEGE OF MANAGEMENT AND TECHNOLOGY.</p>
+        <div class="btnPanel sideSpacing">
+            <button onclick="test('work','workCon','workIco','workLabel')">Know about College</button>
+            <button onclick="test('education','eduCon','eduIco','eduLabel')">Next</button>
+        </div>
+    </section>
+    <section id="work" class="section" style="display: none; opacity: 0%; max-width: 1200px;">
+        <div class="upspacing"></div>
+        <p class="title sideSpacing">work</p>
+        <div class="cardContainer">
+            <div class="box">
+                <div class="cardinfo">
+                    <img class="ico" src="res/images/info.svg" alt="">
+                    <p>SHRP is a android custom recovery project which backbone is based on TWRP.</p>
+                </div>
+                <p class="cardtitle headPad">SHRP</p>
+                <p class="cardtitle">Recovery Project</p>
+                <div class="inner-btn">
+                    <button>Know More</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="cardinfo">
+                    <img class="ico" src="res/images/info.svg" alt="">
+                    <p>This app is for creating themes for SHRP . Most of code is written on java.</p>
+                </div>
+                <p class="cardtitle headPad">SHRP</p>
+                <p class="cardtitle">THEME BUILDER</p>
+                <div class="inner-btn">
+                    <button>Download</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="cardinfo">
+                    <img class="ico" src="res/images/info.svg" alt="">
+                    <p>It is a simple Rock Paper Scissors android game based on flutter framework.</p>
+                </div>
+                <p class="cardtitle headPad">Rock Paper</p>
+                <p class="cardtitle">Scissors Game</p>
+                <div class="inner-btn">
+                    <button>Source code</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="upspacing"></div>
+        <p class="title sideSpacing">Archives</p>
+
+        <div class="cardContainer">
+            <div class="box">
+                <div class="cardinfo">
+                    <img class="ico" src="res/images/info.svg" alt="">
+                    <p>Here are some the work I have done recently.</p>
+                </div>
+                <p class="cardtitle headPad">Coolpad</p>
+                <p class="cardtitle">Cool 1 Dual</p>
+                <div class="inner-btn">
+                    <button>Get now</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="cardinfo">
+                    <img class="ico" src="res/images/info.svg" alt="">
+                    <p>Here some of my work that I have done in past days.</p>
+                </div>
+                <p class="cardtitle headPad">LYF</p>
+                <p class="cardtitle">FLAME 6</p>
+                <div class="inner-btn">
+                    <button>Get now</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="cardinfo">
+                    <img class="ico" src="res/images/info.svg" alt="">
+                    <p>Here some of my modding guides that I have created before.</p>
+                </div>
+                <p class="cardtitle headPad">Modding</p>
+                <p class="cardtitle">Guides</p>
+                <div class="inner-btn">
+                    <button>Download</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="email" class="section" style="display: none; opacity: 0%;">
+        <div class="upspacing"></div>
+        <h1>4th Page</h1>
+    </section>
+
+    <!--div class="acc"></div-->
+</body>
+</html>

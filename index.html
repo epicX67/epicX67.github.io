@@ -7,15 +7,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/fdd6793349.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="main.js"></script>
 </head>
 <body>
     <div class="sideBar">
-        <div id="introCon" class="container enabled" onclick="test('introduction','introCon','introIco','introLabel')">
+        <div id="introCon" class="container enabledPanel" onclick="test('introduction','introCon','introIco','introLabel')">
             <div class="sideBarBtn">
-                <i id="introIco" class="fas fa-user enabled"></i>
+                <i id="introIco" class="fas fa-user blueColor"></i>
             </div>
-            <div id="introLabel" class="labelDiv rm enabled">Introduction</div>
+            <div id="introLabel" class="labelDiv rm blueColor">Introduction</div>
         </div>
         <div id="eduCon" class="container" onclick="test('education','eduCon','eduIco','eduLabel')">
             <div class="sideBarBtn">
@@ -38,19 +39,19 @@
     </div>
     <section id="introduction" class="section" style="display: block;">
         <div class="upspacing"></div>
-        <p class="title sideSpacing">epic<span>X</span></p>
+        <p class="title sideSpacing console blueColor">epic<span>X</span></p>
         <p class="info sideSpacing"><span>H</span>i, I am Sourav Gain. A college student pursuing BCA from Eminent College of Management And Technology. I have great interests on programming and gaming.</p>
         <div class="btnPanel sideSpacing">
-            <button onclick="test('education','eduCon','eduIco','eduLabel')">Next</button>
+            <button class="blueColor blueBtn" onclick="test('education','eduCon','eduIco','eduLabel')">Next</button>
         </div>
     </section>
     <section id="education" class="section" style="display: none; opacity: 0%;">
         <div class="upspacing"></div>
-        <p class="title sideSpacing">Education</p>
+        <p class="title sideSpacing greenColor">Education</p>
         <p class="info sideSpacing"><span>I</span> passed out HS from Habra High School. Now I am currently studying BCA from EMINENT COLLEGE OF MANAGEMENT AND TECHNOLOGY.</p>
         <div class="btnPanel sideSpacing">
-            <button onclick="test('work','workCon','workIco','workLabel')">Know about College</button>
-            <button onclick="test('education','eduCon','eduIco','eduLabel')">Next</button>
+            <button class="greenColor greenBtn" onclick="test('work','workCon','workIco','workLabel')">Know about College</button>
+            <button class="greenColor greenBtn" onclick="test('work','workCon','workIco','workLabel')">Next</button>
         </div>
     </section>
     <section id="work" class="section" style="display: none; opacity: 0%; max-width: 1200px;">

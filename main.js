@@ -23,27 +23,51 @@ function getActiveSection(){
         }
     }
 }
-
+function getColor(id){
+    if(id=="introduction"){
+        return "blueColor";
+    }else if(id=="education"){
+        return "greenColor";
+    }else if(id=="work"){
+        return "pinkColor";
+    }else if(id=="email"){
+        return "orangeColor";
+    }
+}
 
 function test(id,Container,Ico,Label){
     removeStatus();
+    var color=getColor(id);
 
-    document.getElementById(Container).classList.add("enabled");
-    document.getElementById(Ico).classList.add("enabled");
-    document.getElementById(Label).classList.add("enabled");
+    document.getElementById(Container).classList.add("enabledPanel");
+    document.getElementById(Ico).classList.add(color);
+    document.getElementById(Label).classList.add(color);
+
+    //var x=document.querySelectorAll('.enabled');
+    //for(var i=0;i<x.length;i++){
+    //    x[i].style.color=color;
+    //}
     changeSection(id);
 }
 function removeStatus(){
-    document.getElementById("introCon").classList.remove("enabled");
-    document.getElementById("introIco").classList.remove("enabled");
-    document.getElementById("introLabel").classList.remove("enabled");
-    document.getElementById("eduCon").classList.remove("enabled");
-    document.getElementById("eduIco").classList.remove("enabled");
-    document.getElementById("eduLabel").classList.remove("enabled");
-    document.getElementById("workCon").classList.remove("enabled");
-    document.getElementById("workIco").classList.remove("enabled");
-    document.getElementById("workLabel").classList.remove("enabled");
-    document.getElementById("emailCon").classList.remove("enabled");
-    document.getElementById("emailIco").classList.remove("enabled");
-    document.getElementById("emailLabel").classList.remove("enabled");
+    document.getElementById("introCon").classList.remove("enabledPanel");
+    removeColorAttributes('introIco');
+    removeColorAttributes('introLabel');
+    document.getElementById("eduCon").classList.remove("enabledPanel");
+    removeColorAttributes('eduIco');
+    removeColorAttributes('eduLabel');
+    document.getElementById("workCon").classList.remove("enabledPanel");
+    removeColorAttributes('workIco');
+    removeColorAttributes('workLabel');
+    document.getElementById("emailCon").classList.remove("enabledPanel");
+    removeColorAttributes('emailIco');
+    removeColorAttributes('emailLabel');
+}
+function removeColorAttributes(id){
+    var colors=["blueColor","greenColor","orangeColor","redColor","purpleColor","pinkColor"];
+    for(var i=0; i<colors.length;i++){
+        if(document.getElementById(id).classList.contains(colors[i])){
+            document.getElementById(id).classList.remove(colors[i]);
+        }
+    }
 }

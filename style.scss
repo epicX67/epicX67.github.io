@@ -21,12 +21,39 @@
     --accent-color: #4ECCA3;
     --primary-text-color: #BBEBFF;
     --basic-text-color: #FFFFFF;
-}
 
+
+    //SubAccent Colors
+    --light-blue-color: #BDF3FF;
+    --light-green-color: #bdffdb;
+    --light-orange-color: #ffeabd;
+    --light-red-color: #ffc1bd;
+    --light-purple-color: #c1bdff;
+    --light-pink-color: #ffbdeb;
+}
+.blueColor{
+    color: var(--light-blue-color);
+}
+.greenColor{
+    color: var(--light-green-color);
+}
+.orangeColor{
+    color: var(--light-orange-color);
+}
+.redColor{
+    color: var(--light-red-color);
+}
+.purpleColor{
+    color: var(--light-purple-color);
+}
+.pinkColor{
+    color: var(--light-pink-color);
+}
 *{
     padding: 0;
     margin: 0;
-    outline: 0;
+    outline: 1px solid red;
+
 }
 
 body{
@@ -87,7 +114,7 @@ body{
         }
         transition: background 280ms;
     }
-    .enabled{
+    .enabledPanel{
         background: var(--primary-background-color);
     }
     .container:hover{
@@ -149,7 +176,10 @@ body{
             font-size: 70px;
         }
     }
-    .title::after{
+    .console{
+        //Empty
+    }
+    .console::after{
         content: "";
         position: absolute;
         height: 12px;
@@ -192,12 +222,26 @@ body{
             font-size: 15px;
             letter-spacing: .05rem;
             word-spacing: .3rem;
-            color: #BBEBFF;
+            //color: #BBEBFF;
             box-shadow: 0px 2px 10px #00000015;
             transition: color 280ms, background 280ms;
         }
+        .blueBtn{
+            //Empty
+        }
+        .blueBtn:hover{
+            background: var(--light-blue-color);
+            color: #292F39;
+        }
+        .greenBtn{
+            //Empty
+        }
+        .greenBtn:hover{
+            background: var(--light-green-color);
+            color: #292F39;
+        }
         button:hover{
-            background: #BBEBFF;
+            //background: #BBEBFF;
             color: #292F39;
         }
     }

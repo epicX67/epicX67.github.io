@@ -34,12 +34,42 @@
   --accent-color: #4ECCA3;
   --primary-text-color: #BBEBFF;
   --basic-text-color: #FFFFFF;
+  --light-blue-color: #BDF3FF;
+  --light-green-color: #bdffdb;
+  --light-orange-color: #ffeabd;
+  --light-red-color: #ffc1bd;
+  --light-purple-color: #c1bdff;
+  --light-pink-color: #ffbdeb;
+}
+
+.blueColor {
+  color: var(--light-blue-color);
+}
+
+.greenColor {
+  color: var(--light-green-color);
+}
+
+.orangeColor {
+  color: var(--light-orange-color);
+}
+
+.redColor {
+  color: var(--light-red-color);
+}
+
+.purpleColor {
+  color: var(--light-purple-color);
+}
+
+.pinkColor {
+  color: var(--light-pink-color);
 }
 
 * {
   padding: 0;
   margin: 0;
-  outline: 0;
+  outline: 1px solid red;
 }
 
 body {
@@ -135,7 +165,7 @@ body {
   transition: opacity 200ms 0ms;
 }
 
-.sideBar .enabled {
+.sideBar .enabledPanel {
   background: var(--primary-background-color);
 }
 
@@ -210,7 +240,7 @@ body {
   font-size: 70px;
 }
 
-.section .title::after {
+.section .console::after {
   content: "";
   position: absolute;
   height: 12px;
@@ -262,15 +292,23 @@ body {
   font-size: 15px;
   letter-spacing: .05rem;
   word-spacing: .3rem;
-  color: #BBEBFF;
   -webkit-box-shadow: 0px 2px 10px #00000015;
           box-shadow: 0px 2px 10px #00000015;
   -webkit-transition: color 280ms, background 280ms;
   transition: color 280ms, background 280ms;
 }
 
+.section .btnPanel .blueBtn:hover {
+  background: var(--light-blue-color);
+  color: #292F39;
+}
+
+.section .btnPanel .greenBtn:hover {
+  background: var(--light-green-color);
+  color: #292F39;
+}
+
 .section .btnPanel button:hover {
-  background: #BBEBFF;
   color: #292F39;
 }
 

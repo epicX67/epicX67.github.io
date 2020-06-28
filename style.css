@@ -4,6 +4,12 @@
 }
 
 @font-face {
+  src: url("res//font/Steradian Bold.otf");
+  font-family: Steradian;
+  font-weight: 900;
+}
+
+@font-face {
   src: url("res/font/AvenirLTStd-Book.otf");
   font-family: avenir;
 }
@@ -264,6 +270,10 @@ body {
   position: relative;
   font-family: arcaMajora;
   font-size: 64px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .section .title span {
@@ -358,6 +368,10 @@ body {
   background: #292F39;
   position: relative;
   border-radius: 6px;
+  -webkit-transition: -webkit-transform 280ms ease;
+  transition: -webkit-transform 280ms ease;
+  transition: transform 280ms ease;
+  transition: transform 280ms ease, -webkit-transform 280ms ease;
 }
 
 .cardContainer .box .headPad {
@@ -367,6 +381,10 @@ body {
 .cardContainer .box .cardtitle {
   margin-left: 1.4rem;
   margin-bottom: .2rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   font-family: Steradian;
   font-weight: 900;
   font-size: 28px;
@@ -383,7 +401,7 @@ body {
   height: 2rem;
   width: 35%;
   border-radius: 0px;
-  background: #333942;
+  background: #323b49;
   border: 0;
   font-family: Steradian;
   font-weight: 900;
@@ -397,23 +415,52 @@ body {
   color: var(--primary-background-color);
 }
 
+.cardContainer .box .inner-btn .greenBtn:hover {
+  background: var(--light-green-color);
+  color: var(--primary-background-color);
+}
+
+.cardContainer .box .inner-btn .redBtn:hover {
+  background: var(--light-red-color);
+  color: var(--primary-background-color);
+}
+
+.cardContainer .box .inner-btn .blueBtn:hover {
+  background: var(--light-blue-color);
+  color: var(--primary-background-color);
+}
+
+.cardContainer .box .inner-btn .orangeBtn:hover {
+  background: var(--light-orange-color);
+  color: var(--primary-background-color);
+}
+
+.cardContainer .box .inner-btn .purpleBtn:hover {
+  background: var(--light-purple-color);
+  color: var(--primary-background-color);
+}
+
 .cardContainer .cardinfo {
   position: absolute;
   width: 290px;
   height: 290px;
   border-radius: inherit;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   -webkit-clip-path: circle(25% at 0% 0%);
           clip-path: circle(25% at 0% 0%);
   color: transparent;
-  -webkit-transition: background 320ms, color 280ms, -webkit-clip-path 350ms;
-  transition: background 320ms, color 280ms, -webkit-clip-path 350ms;
-  transition: background 320ms, clip-path 350ms, color 280ms;
-  transition: background 320ms, clip-path 350ms, color 280ms, -webkit-clip-path 350ms;
+  -webkit-transition: background 420ms, color 380ms, -webkit-clip-path 450ms ease-in-out;
+  transition: background 420ms, color 380ms, -webkit-clip-path 450ms ease-in-out;
+  transition: background 420ms, clip-path 450ms ease-in-out, color 380ms;
+  transition: background 420ms, clip-path 450ms ease-in-out, color 380ms, -webkit-clip-path 450ms ease-in-out;
 }
 
 .cardContainer .cardinfo p {
-  margin: 4rem 1rem 0rem 1.5rem;
-  font-size: 1.2rem;
+  margin: 2rem 1rem 0rem 1.5rem;
+  font-size: 1.1rem;
   font-family: avenir;
 }
 
@@ -422,6 +469,8 @@ body {
   padding-left: .8rem;
   padding-top: .8rem;
   height: 30px;
+  -webkit-transition: opacity 280ms 200ms;
+  transition: opacity 280ms 200ms;
 }
 
 .cardContainer .cardinfo:hover {
@@ -431,7 +480,9 @@ body {
 }
 
 .cardContainer .cardinfo:hover .ico {
-  display: none;
+  -webkit-transition: opacity 280ms;
+  transition: opacity 280ms;
+  opacity: 0%;
 }
 
 .cardContainer .blueBgColor:hover {

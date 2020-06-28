@@ -3,6 +3,11 @@
     font-family: arcaMajora;
 }
 @font-face{
+    src: url("res//font/Steradian\ Bold.otf");
+    font-family: Steradian;
+    font-weight: 900;
+}
+@font-face{
     src: url("res/font/AvenirLTStd-Book.otf");
     font-family: avenir;
 }
@@ -198,12 +203,10 @@ body{
         position: relative;
         font-family: arcaMajora;
         font-size: 64px;
+        user-select: none;
         span{
             font-size: 70px;
         }
-    }
-    .console{
-        //Empty
     }
     .console::after{
         content: "";
@@ -287,13 +290,14 @@ body{
         background: #292F39;
         position: relative;
         border-radius: 6px;
+        transition: transform 280ms ease;
         .headPad{
             padding-top: 5rem;
         }
         .cardtitle{
             margin-left: 1.4rem;
             margin-bottom: .2rem;
-            
+            user-select: none;
             font-family: Steradian;
             font-weight: 900;
             font-size: 28px;
@@ -307,7 +311,7 @@ body{
                 height: 2rem;
                 width: 35%;
                 border-radius: 0px;
-                background: #333942;
+                background: #323b49;
                 border: 0;
                 //border: 2px solid #637183;
                 font-family: Steradian;
@@ -315,28 +319,46 @@ body{
                 margin-right: .8rem;
                 transition: color 280ms, background 280ms;
             }
-            .pinkBtn{
-
-            }
             .pinkBtn:hover{
                 background: var(--light-pink-color);
                 color: var(--primary-background-color);
             }
+            .greenBtn:hover{
+                background: var(--light-green-color);
+                color: var(--primary-background-color);
+            }
+            .redBtn:hover{
+                background: var(--light-red-color);
+                color: var(--primary-background-color);
+            }
+            .blueBtn:hover{
+                background: var(--light-blue-color);
+                color: var(--primary-background-color);
+            }
+            .orangeBtn:hover{
+                background: var(--light-orange-color);
+                color: var(--primary-background-color);
+            }
+            .purpleBtn:hover{
+                background: var(--light-purple-color);
+                color: var(--primary-background-color);
+            }
         }
     }
+    
     .cardinfo{
         position: absolute;
         width: 290px;
         height: 290px;
         border-radius: inherit;
-        //background: transparent;
+        user-select: none;
         clip-path: circle(25% at 0% 0%);
         color: transparent;
 
 
         p{
-            margin: 4rem 1rem 0rem 1.5rem;
-            font-size: 1.2rem;
+            margin: 2rem 1rem 0rem 1.5rem;
+            font-size: 1.1rem;
             font-family: avenir;
             //word-spacing: .5rem;
         }
@@ -345,15 +367,17 @@ body{
             padding-left: .8rem;
             padding-top: .8rem;
             height: 30px;   
+            transition: opacity 280ms 200ms;
         }
-        transition: background 320ms, clip-path 350ms, color 280ms ;
+        transition: background 420ms, clip-path 450ms ease-in-out, color 380ms;
     }
     .cardinfo:hover{
         //background: #196aff;
         clip-path: circle(145% at 0% 0%);
         color: var(--primary-background-color);
         .ico{
-            display: none;
+            transition: opacity 280ms;
+            opacity: 0%;
         }
     }
     .blueBgColor:hover{

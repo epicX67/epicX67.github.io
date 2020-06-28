@@ -40,6 +40,12 @@
   --light-red-color: #ffc1bd;
   --light-purple-color: #c1bdff;
   --light-pink-color: #ffbdeb;
+  --light-semi-blue-color: #bdf3ffa4;
+  --light-semi-green-color: #bdffdba4;
+  --light-semi-orange-color: #ffeabda4;
+  --light-semi-red-color: #ffc1bda4;
+  --light-semi-purple-color: #c1bdffa4;
+  --light-semi-pink-color: #ffbdeba4;
 }
 
 .blueColor {
@@ -66,10 +72,34 @@
   color: var(--light-pink-color);
 }
 
+.semiblueColor {
+  color: var(--light-semi-blue-color);
+}
+
+.semigreenColor {
+  color: var(--light-semi-green-color);
+}
+
+.semiorangeColor {
+  color: var(--light-semi-orange-color);
+}
+
+.semiredColor {
+  color: var(--light-semi-red-color);
+}
+
+.semipurpleColor {
+  color: var(--light-semi-purple-color);
+}
+
+.semipinkColor {
+  color: var(--light-semi-pink-color);
+}
+
 * {
   padding: 0;
   margin: 0;
-  outline: 1px solid red;
+  outline: 0;
 }
 
 body {
@@ -337,7 +367,6 @@ body {
 .cardContainer .box .cardtitle {
   margin-left: 1.4rem;
   margin-bottom: .2rem;
-  color: #637183;
   font-family: Steradian;
   font-weight: 900;
   font-size: 28px;
@@ -353,30 +382,28 @@ body {
 .cardContainer .box .inner-btn button {
   height: 2rem;
   width: 35%;
-  border-radius: 20px;
-  background: #637183;
-  border: 2px solid #637183;
+  border-radius: 0px;
+  background: #333942;
+  border: 0;
   font-family: Steradian;
   font-weight: 900;
-  color: #292F39;
   margin-right: .8rem;
   -webkit-transition: color 280ms, background 280ms;
   transition: color 280ms, background 280ms;
 }
 
-.cardContainer .box .inner-btn button:hover {
-  color: #637183;
-  background: #292F39;
+.cardContainer .box .inner-btn .pinkBtn:hover {
+  background: var(--light-pink-color);
+  color: var(--primary-background-color);
 }
 
 .cardContainer .cardinfo {
   position: absolute;
-  width: 305px;
-  height: 305px;
+  width: 290px;
+  height: 290px;
   border-radius: inherit;
-  background: transparent;
-  -webkit-clip-path: circle(20% at 0% 0%);
-          clip-path: circle(20% at 0% 0%);
+  -webkit-clip-path: circle(25% at 0% 0%);
+          clip-path: circle(25% at 0% 0%);
   color: transparent;
   -webkit-transition: background 320ms, color 280ms, -webkit-clip-path 350ms;
   transition: background 320ms, color 280ms, -webkit-clip-path 350ms;
@@ -387,8 +414,7 @@ body {
 .cardContainer .cardinfo p {
   margin: 4rem 1rem 0rem 1.5rem;
   font-size: 1.2rem;
-  font-family: Steradian;
-  word-spacing: .5rem;
+  font-family: avenir;
 }
 
 .cardContainer .cardinfo .ico {
@@ -399,13 +425,36 @@ body {
 }
 
 .cardContainer .cardinfo:hover {
-  background: #196aff;
   -webkit-clip-path: circle(145% at 0% 0%);
           clip-path: circle(145% at 0% 0%);
-  color: white;
+  color: var(--primary-background-color);
 }
 
 .cardContainer .cardinfo:hover .ico {
   display: none;
+}
+
+.cardContainer .blueBgColor:hover {
+  background: var(--light-blue-color);
+}
+
+.cardContainer .greenBgColor:hover {
+  background: var(--light-green-color);
+}
+
+.cardContainer .orangeBgColor:hover {
+  background: var(--light-orange-color);
+}
+
+.cardContainer .redBgColor:hover {
+  background: var(--light-red-color);
+}
+
+.cardContainer .purpleBgColor:hover {
+  background: var(--light-purple-color);
+}
+
+.cardContainer .pinkBgColor:hover {
+  background: var(--light-pink-color);
 }
 /*# sourceMappingURL=style.css.map */

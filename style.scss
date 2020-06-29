@@ -8,6 +8,10 @@
     font-weight: 900;
 }
 @font-face{
+    src: url("res//font/Steradian\ Medium.otf");
+    font-family: SteradianLite;
+}
+@font-face{
     src: url("res/font/AvenirLTStd-Book.otf");
     font-family: avenir;
 }
@@ -255,15 +259,9 @@ body{
             box-shadow: 0px 2px 10px #00000015;
             transition: color 280ms, background 280ms;
         }
-        .blueBtn{
-            //Empty
-        }
         .blueBtn:hover{
             background: var(--light-blue-color);
             color: #292F39;
-        }
-        .greenBtn{
-            //Empty
         }
         .greenBtn:hover{
             background: var(--light-green-color);
@@ -272,6 +270,78 @@ body{
         button:hover{
             //background: #BBEBFF;
             color: #292F39;
+        }
+    }
+
+    .formPanel{
+        margin-top: 2rem;
+        //height: 412px;
+        width: 323px;
+        background: #292F39;
+        border-radius: 6px;
+        display: flex;
+        flex-direction: column;
+        padding: 3rem;
+        .formCard{
+            width: auto;
+            //width: 100%;
+            //height: 10px;
+            //background: red;
+            margin-bottom: 3rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: center;
+            img{
+                width: 38px;
+            }
+
+            input, textarea{
+                outline: 0;
+                border: 2px solid #2E3746;
+                background: transparent;
+                width: 262px;
+                height: 42px;
+                margin-left: 2rem;
+                
+                color: rgb(184, 207, 255);
+                font-size: 1.2rem;
+                padding-left: .5rem;
+                padding-right: .5rem;
+            }
+            input:focus{
+                border-color: #344461;
+            }
+
+            button{
+                height: 2rem;
+                width: 35%;
+                border-radius: 0px;
+                background: #323b49;
+                border: 0;
+                //border: 2px solid #637183;
+                font-family: Steradian;
+                font-weight: 900;
+                margin-right: .8rem;
+                transition: color 280ms, background 280ms;
+            }
+
+            .sendBtn{
+                width: max-content;
+                height: 42px;
+                border: 2px solid #2E3746;
+                background: transparent;
+                font-size: 16px;
+                letter-spacing: .06rem;
+                margin: 0;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+                //padding: 0;
+            }
+            .orangeBtn:hover{
+                background: var(--light-orange-color);
+                color: var(--primary-background-color);
+            }
         }
     }
 }
@@ -303,6 +373,22 @@ body{
             font-size: 28px;
             letter-spacing: .1rem;
         }
+        .subTitle{
+            font-family: Steradian;
+            font-size: 24px;
+            letter-spacing: .1rem;
+            color: var(--disabled-ico-color);
+            margin-bottom: 2rem;
+            margin-top: 1rem;
+            user-select: none;
+        }
+        .subIco{
+            font-size: 5rem;
+            transition: transform 280ms;
+        }
+        .subIco:hover{
+            transform: scale(110%);
+        }
         .inner-btn{
             width: 100%;
             height: 2rem;
@@ -318,6 +404,18 @@ body{
                 font-weight: 900;
                 margin-right: .8rem;
                 transition: color 280ms, background 280ms;
+            }
+            .subBtn{
+                width: max-content;
+                height: 42px;
+                border: 2px solid #2E3746;
+                background: transparent;
+                font-size: 16px;
+                letter-spacing: .06rem;
+                margin: 0;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+                //padding: 0;
             }
             .pinkBtn:hover{
                 background: var(--light-pink-color);
@@ -344,6 +442,21 @@ body{
                 color: var(--primary-background-color);
             }
         }
+        .center{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+    }
+    .subBox{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     
     .cardinfo{
@@ -399,3 +512,5 @@ body{
         background: var(--light-pink-color);
     }
 }
+
+

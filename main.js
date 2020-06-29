@@ -16,7 +16,7 @@ async function changeSection(id){
 }
 
 function getActiveSection(){
-    var sections=["introduction","education","work","email"];
+    var sections=["introduction","education","work","follow","email"];
     for(var i=0;i<sections.length;i++){
         if(document.getElementById(sections[i]).style.display!="none"){
             return sections[i];
@@ -30,6 +30,8 @@ function getColor(id){
         return "greenColor";
     }else if(id=="work"){
         return "pinkColor";
+    }else if(id=="follow"){
+        return "redColor";
     }else if(id=="email"){
         return "orangeColor";
     }
@@ -43,10 +45,7 @@ function test(id,Container,Ico,Label){
     document.getElementById(Ico).classList.add(color);
     document.getElementById(Label).classList.add(color);
 
-    //var x=document.querySelectorAll('.enabled');
-    //for(var i=0;i<x.length;i++){
-    //    x[i].style.color=color;
-    //}
+
     changeSection(id);
 }
 function removeStatus(){
@@ -59,6 +58,9 @@ function removeStatus(){
     document.getElementById("workCon").classList.remove("enabledPanel");
     removeColorAttributes('workIco');
     removeColorAttributes('workLabel');
+    document.getElementById("followCon").classList.remove("enabledPanel");
+    removeColorAttributes('followIco');
+    removeColorAttributes('followLabel');
     document.getElementById("emailCon").classList.remove("enabledPanel");
     removeColorAttributes('emailIco');
     removeColorAttributes('emailLabel');

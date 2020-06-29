@@ -30,6 +30,12 @@
             </div>
             <div id="workLabel" class="labelDiv rm">My Work</div>
         </div>
+        <div id="followCon" class="container" onclick="test('follow','followCon','followIco','followLabel')">
+            <div class="sideBarBtn">
+                <i id="followIco" class="fas fa-address-book"></i>
+            </div>
+            <div id="followLabel" class="labelDiv rm">Follow</div>
+        </div>
         <div id="emailCon" class="container" onclick="test('email','emailCon','emailIco','emailLabel')">
             <div class="sideBarBtn">
                 <i id="emailIco" class="fas fa-envelope"></i>
@@ -56,7 +62,7 @@
     </section>
 
     
-    <section id="work" class="section" style="display: none; opacity: 0%; max-width: 1200px;">
+    <section id="work" class="section" style="display: none; opacity: 0%; max-width: 1000px;">
         <div class="upspacing"></div>
         <p class="title sideSpacing pinkColor">work</p>
         <div class="cardContainer">
@@ -142,11 +148,63 @@
             </div>
         </div>
     </section>
-    <section id="email" class="section" style="display: none; opacity: 0%;">
+    <section id="follow" class="section" style="display: none; opacity: 0%; max-width: 1200px;">
         <div class="upspacing"></div>
-        <h1>4th Page</h1>
+        <p class="title sideSpacing greenColor">Follow</p>
+        <div class="cardContainer">
+            <div class="box subBox">
+                <i class="fab fa-telegram-plane subIco blueColor"></i>
+                <p class="subTitle">Pakoman</p>
+                <div class="inner-btn center">
+                    <button class="subBtn blueColor blueBtn">Send Message</button>
+                </div>
+            </div>
+            <div class="box subBox">
+                <i class="fab fa-youtube subIco redColor"></i>
+                <p class="subTitle">Epic Spicy</p>
+                <div class="inner-btn center">
+                    <button class="subBtn redColor redBtn">Subscribe</button>
+                </div>
+            </div>
+            <div class="box subBox">
+                <i class="fab fa-github-alt subIco purpleColor"></i>
+                <p class="subTitle">epicX67</p>
+                <div class="inner-btn center">
+                    <button class="subBtn purpleColor purpleBtn">Follow</button>
+                </div>
+            </div>
+        </div>
     </section>
 
+    <section id="email" class="section" style="display: none; opacity: 0%; max-width: 1000px;">
+        <div class="upspacing"></div>
+        <p class="title sideSpacing orangeColor">Contact</p>
+        <p class="info sideSpacing">Leave your message here if you have one :p </p>
+
+        <form action="" method="post" class="formPanel sideSpacing">
+            <div class="formCard">
+                <img src="res/images/signature-solid.svg" alt="">
+                <input type="text" placeholder="Name">
+            </div>
+            <div class="formCard">
+                <img src="res/images/at-solid.svg" alt="">
+                <input type="email" placeholder="Email">
+            </div>
+            <div class="formCard">
+                <img src="res/images/keyboard-solid.svg" alt="">
+                <input type="text" placeholder="Your message">
+            </div>
+            <div class="formCard" style="justify-content: flex-end; margin-bottom: 0;">
+                <button class="sendBtn orangeColor orangeBtn">Send</button>
+            </div>
+        </form>
+    
+    </section>
+    <!--sendBtn
+        <i class="fas fa-at"></i>
+        <i class="fas fa-signature"></i>
+        <i class="fas fa-keyboard"></i>
+    -->
     <!--div class="acc"></div-->
 </body>
 </html>

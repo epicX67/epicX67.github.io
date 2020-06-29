@@ -252,7 +252,7 @@ body {
 .section {
   background: transparent;
   margin-left: 87px;
-  width: 90%;
+  width: calc(90% - 87px);
   max-width: 700px;
   color: white;
   -webkit-transition: opacity 280ms;
@@ -265,7 +265,6 @@ body {
 
 .section .sideSpacing {
   margin-left: 2rem;
-  margin-right: 2rem;
 }
 
 .section .title {
@@ -298,6 +297,8 @@ body {
 }
 
 .section .info {
+  width: 100%;
+  max-width: 600px;
   margin-top: 2rem;
   font-family: avenir;
   color: #E3E3E3;
@@ -359,6 +360,7 @@ body {
 
 .section .formPanel {
   margin-top: 2rem;
+  margin-left: 2rem;
   width: 323px;
   background: #292F39;
   border-radius: 6px;
@@ -673,5 +675,209 @@ body {
 
 .cardContainer .pinkBgColor:hover {
   background: var(--light-pink-color);
+}
+
+@media (max-width: 574px) {
+  .sideBar {
+    height: 70px;
+    width: 100%;
+    top: unset;
+    bottom: 0;
+    left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-transition: width 280ms 100ms ease;
+    transition: width 280ms 100ms ease;
+  }
+  .sideBar .container {
+    width: 100%;
+    height: 70px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-transition: background 280ms;
+    transition: background 280ms;
+  }
+  .sideBar .container .sideBarBtn {
+    width: calc(100% / 5);
+    font-size: 1.2rem;
+    display: -ms-grid;
+    display: grid;
+    place-content: center;
+  }
+  .sideBar .container .labelDiv {
+    display: none;
+  }
+  .sideBar .container .rm {
+    display: none;
+  }
+  .sideBar:hover {
+    width: 100%;
+    -webkit-transition: width 280ms ease;
+    transition: width 280ms ease;
+  }
+  .sideBar:hover .container .rm {
+    opacity: 100%;
+    -webkit-transition: opacity 280ms 200ms;
+    transition: opacity 280ms 200ms;
+  }
+  .section {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 90%;
+  }
+  .section .sideSpacing {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .section .title {
+    font-size: 54px;
+    margin-left: 1rem;
+  }
+  .section .title span {
+    font-size: 60px;
+  }
+  .section .console::after {
+    height: 8px;
+    width: 25px;
+    bottom: 26%;
+    right: -35px;
+  }
+  .section .info {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+    font-size: 16px;
+  }
+  .section .info span {
+    font-size: 30px;
+  }
+  .section .btnPanel {
+    margin-top: 2rem;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    margin-right: 1rem;
+  }
+  .section .btnPanel button {
+    height: 34px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-left: 1rem;
+    font-family: SteradianLite;
+    font-weight: 100;
+    font-size: 12px;
+    letter-spacing: .05rem;
+    word-spacing: 0rem;
+    -webkit-box-shadow: 0px 2px 10px #00000015;
+            box-shadow: 0px 2px 10px #00000015;
+    -webkit-transition: color 280ms, background 280ms;
+    transition: color 280ms, background 280ms;
+  }
+  .section .formPanel {
+    margin-top: 1rem;
+    margin-left: 0rem;
+    width: 85%;
+    border-radius: 6px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 2rem;
+  }
+  .section .formPanel .formCard {
+    width: auto;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .section .formPanel .formCard img {
+    width: 30px;
+  }
+  .section .formPanel .formCard input, .section .formPanel .formCard textarea {
+    outline: 0;
+    border: 2px solid #2E3746;
+    background: transparent;
+    width: 262px;
+    height: 42px;
+    margin-left: 2rem;
+    font-size: 1rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+  }
+  .section .formPanel .formCard input:focus {
+    border-color: #344461;
+  }
+  .section .formPanel .formCard .sendBtn {
+    height: 36px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-left: 1rem;
+    font-family: SteradianLite;
+    font-weight: 100;
+    font-size: 12px;
+    letter-spacing: .05rem;
+    word-spacing: 0rem;
+  }
+  .cardContainer {
+    margin-left: 0;
+    margin-top: 1rem;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (290px)[auto-fill];
+        grid-template-columns: repeat(auto-fill, 290px);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 2rem;
+    margin-bottom: 6rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */

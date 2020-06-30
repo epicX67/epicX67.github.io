@@ -2,6 +2,26 @@ function sleep(ms){
     return new Promise(resolve => setTimeout(resolve,ms));
 }
 
+function link(index){
+    var links=[
+        "http://www.ecmt.in/",//College Site
+        "https://skyhawkrecovery.github.io/", //SHRP Site
+        "https://github.com/SKYHAWK-Recovery-Project/shrp_theme_builder/releases", //SHRP Theme builder releases
+        "https://github.com/epicX67/flutterApp_RPSGame", // Simple RPS Game
+
+        "https://drive.google.com/open?id=1qBjhQff5f7znv91xsdM4dr15kQyTg0Tu", //Archives for cool 1 dual
+        "https://mega.nz/folder/KdYCXYRL#Z-qJy_ci8Z7Kz1hXLu3XBA", //Archives for Flame 6
+        "https://mega.nz/folder/mMJi0aqJ#iL4wCX75M64WTuLXrAQ0uA", //Archives for modding guides
+
+        "https://t.me/epicx67", //Telegram Acc
+        "https://www.youtube.com/c/epicspicy?sub_confirmation=1", //Youtube Channel
+        "https://www.github.com/epicX67", //Github Acc
+        "",
+
+]
+    window.open(links[index]);
+}
+
 async function changeSection(id){
     var activeSection=getActiveSection();
     if(activeSection==id){

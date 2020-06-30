@@ -254,7 +254,9 @@ body {
   margin-left: 87px;
   width: calc(90% - 87px);
   max-width: 700px;
+  min-height: calc(100vh - 5rem);
   color: white;
+  position: relative;
   -webkit-transition: opacity 280ms;
   transition: opacity 280ms;
 }
@@ -765,7 +767,7 @@ body {
     right: -35px;
   }
   .section .info {
-    width: 100%;
+    width: 92%;
     max-width: 600px;
     margin-top: 1.5rem;
     margin-left: 1rem;

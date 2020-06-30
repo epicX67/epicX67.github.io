@@ -193,7 +193,9 @@ body{
     //height: 100vh;
     width: calc(90% - 87px);
     max-width: 700px;
+    min-height: calc(100vh - 5rem);
     color: white;
+    position: relative;
     transition: opacity 280ms;
     .upspacing{
         margin-top: 80px;
@@ -591,10 +593,11 @@ body{
         }
 
         .info{
-            width: 100%;
+            width: 92%;
             max-width: 600px;
             margin-top: 1.5rem;
             margin-left: 1rem;
+            
             font-size: 16px;
             span{
                 font-size: 30px;

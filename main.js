@@ -8,7 +8,7 @@ function link(index){
         "https://skyhawkrecovery.github.io/", //SHRP Site
         "https://github.com/SKYHAWK-Recovery-Project/shrp_theme_builder/releases", //SHRP Theme builder releases
         "https://github.com/epicX67/flutterApp_RPSGame", // Simple RPS Game
-        "https://www.github.com/epicX67", //Krunker Ui Mod
+        "https://www.github.com/epicX67/documents_KrunkerResourceSwapper", //Krunker Ui Mod
 
         "https://drive.google.com/open?id=1qBjhQff5f7znv91xsdM4dr15kQyTg0Tu", //Archives for cool 1 dual
         "https://mega.nz/folder/KdYCXYRL#Z-qJy_ci8Z7Kz1hXLu3XBA", //Archives for Flame 6

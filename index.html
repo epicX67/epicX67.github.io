@@ -47,6 +47,7 @@
         <p class="title sideSpacing console blueColor">epic<span>X</span></p>
         <p class="info sideSpacing"><span>H</span>i, I am Sourav Gain. A college student pursuing BCA from Eminent College of Management And Technology. I have great interests on programming and gaming.</p>
         <div class="btnPanel sideSpacing">
+            <button id="switchMode" class="blueColor blueBtn" onclick="switchMode()"><i class="far fa-lightbulb"></i></button>
             <button class="blueColor blueBtn" onclick="test('education','eduCon','eduIco','eduLabel')">Next</button>
         </div>
     </section>
@@ -189,16 +190,16 @@
 
         <form action="" method="post" class="formPanel">
             <div class="formCard">
-                <img src="res/images/signature-solid.svg" alt="">
-                <input type="text" placeholder="Name">
+                <img class="icoName" src="res/images/signature-solid.svg" alt="">
+                <input class="inputName" type="text" placeholder="Name">
             </div>
             <div class="formCard">
-                <img src="res/images/at-solid.svg" alt="">
-                <input type="email" placeholder="Email">
+                <img class="icoEmail" src="res/images/at-solid.svg" alt="">
+                <input class="inputEmail" type="email" placeholder="Email">
             </div>
             <div class="formCard">
-                <img src="res/images/keyboard-solid.svg" alt="">
-                <input type="text" placeholder="Your message">
+                <img class="icoMsg" src="res/images/keyboard-solid.svg" alt="">
+                <input class="inputMessage" type="text" placeholder="Your message">
             </div>
             <div class="formCard" style="justify-content: flex-end; margin-bottom: 0;">
                 <button class="sendBtn orangeColor orangeBtn">Send</button>

@@ -44,7 +44,12 @@
   --enabled-ico-color: #BDF3FF;
   --accent-color: #4ECCA3;
   --primary-text-color: #BBEBFF;
-  --basic-text-color: #FFFFFF;
+  --basic-text-color: #E3E3E3;
+  --button-bg-color: #323B49;
+  --button-border-color: #2E3746;
+  --nameFilter: invert(71%) sepia(31%) saturate(579%) hue-rotate(292deg) brightness(114%) contrast(106%);
+  --emailFilter: invert(71%) sepia(6%) saturate(1807%) hue-rotate(204deg) brightness(104%) contrast(105%);
+  --msgFilter: invert(89%) sepia(24%) saturate(401%) hue-rotate(83deg) brightness(103%) contrast(104%);
   --light-blue-color: #BDF3FF;
   --light-green-color: #bdffdb;
   --light-orange-color: #ffeabd;
@@ -115,7 +120,10 @@
 
 body {
   background: var(--primary-background-color);
+  color: var(--basic-text-color);
   position: relative;
+  -webkit-transition: color 280ms, background 280ms;
+  transition: color 280ms, background 280ms;
 }
 
 .sideBar {
@@ -140,8 +148,8 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
-  -webkit-transition: width 280ms 100ms ease;
-  transition: width 280ms 100ms ease;
+  -webkit-transition: width 280ms 100ms ease, background 280ms;
+  transition: width 280ms 100ms ease, background 280ms;
 }
 
 .sideBar .container {
@@ -291,7 +299,7 @@ body {
   position: absolute;
   height: 12px;
   width: 35px;
-  background: #BBEBFF;
+  background: var(--light-blue-color);
   bottom: 26%;
   right: -50px;
   -webkit-animation: console 1s ease-in-out infinite;
@@ -303,7 +311,7 @@ body {
   max-width: 600px;
   margin-top: 2rem;
   font-family: avenir;
-  color: #E3E3E3;
+  color: var(--basic-text-color);
   line-height: 168%;
   font-size: 20px;
 }
@@ -332,7 +340,7 @@ body {
   padding-left: 2rem;
   padding-right: 2rem;
   margin-left: 1rem;
-  background: #292F39;
+  background: var(--secondary-background-color);
   border: 0;
   border-radius: 3px;
   font-family: Steradian;
@@ -340,31 +348,29 @@ body {
   font-size: 15px;
   letter-spacing: .05rem;
   word-spacing: .3rem;
-  -webkit-box-shadow: 0px 2px 10px #00000015;
-          box-shadow: 0px 2px 10px #00000015;
   -webkit-transition: color 280ms, background 280ms;
   transition: color 280ms, background 280ms;
 }
 
 .section .btnPanel .blueBtn:hover {
   background: var(--light-blue-color);
-  color: #292F39;
+  color: var(--secondary-background-color);
 }
 
 .section .btnPanel .greenBtn:hover {
   background: var(--light-green-color);
-  color: #292F39;
+  color: var(--secondary-background-color);
 }
 
 .section .btnPanel button:hover {
-  color: #292F39;
+  color: var(--secondary-background-color);
 }
 
 .section .formPanel {
   margin-top: 2rem;
   margin-left: 2rem;
   width: 323px;
-  background: #292F39;
+  background: var(--secondary-background-color);
   border-radius: 6px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -398,28 +404,70 @@ body {
   width: 38px;
 }
 
+.section .formPanel .formCard .icoName {
+  -webkit-filter: var(--nameFilter);
+          filter: var(--nameFilter);
+}
+
+.section .formPanel .formCard .icoEmail {
+  -webkit-filter: var(--emailFilter);
+          filter: var(--emailFilter);
+}
+
+.section .formPanel .formCard .icoMsg {
+  -webkit-filter: var(--msgFilter);
+          filter: var(--msgFilter);
+}
+
 .section .formPanel .formCard input, .section .formPanel .formCard textarea {
   outline: 0;
-  border: 2px solid #2E3746;
+  border: 2px solid var(--button-border-color);
   background: transparent;
   width: 262px;
   height: 42px;
   margin-left: 2rem;
-  color: #b8cfff;
   font-size: 1.2rem;
   padding-left: .5rem;
   padding-right: .5rem;
 }
 
+.section .formPanel .formCard input::-webkit-input-placeholder {
+  color: var(--disabled-ico-color);
+}
+
+.section .formPanel .formCard input:-ms-input-placeholder {
+  color: var(--disabled-ico-color);
+}
+
+.section .formPanel .formCard input::-ms-input-placeholder {
+  color: var(--disabled-ico-color);
+}
+
+.section .formPanel .formCard input::placeholder {
+  color: var(--disabled-ico-color);
+}
+
 .section .formPanel .formCard input:focus {
-  border-color: #344461;
+  border-color: var(--disabled-ico-color);
+}
+
+.section .formPanel .formCard .inputName {
+  color: var(--light-pink-color);
+}
+
+.section .formPanel .formCard .inputEmail {
+  color: var(--light-purple-color);
+}
+
+.section .formPanel .formCard .inputMessage {
+  color: var(--light-green-color);
 }
 
 .section .formPanel .formCard button {
   height: 2rem;
   width: 35%;
   border-radius: 0px;
-  background: #323b49;
+  background: var(--button-bg-color);
   border: 0;
   font-family: Steradian;
   font-weight: 900;
@@ -433,18 +481,21 @@ body {
   width: -moz-max-content;
   width: max-content;
   height: 42px;
-  border: 2px solid #2E3746;
+  border: 2px solid var(--button-border-color);
   background: transparent;
   font-size: 16px;
   letter-spacing: .06rem;
   margin: 0;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  -webkit-transition: border-color 280ms, color 280ms, background 280ms;
+  transition: border-color 280ms, color 280ms, background 280ms;
 }
 
 .section .formPanel .formCard .orangeBtn:hover {
   background: var(--light-orange-color);
   color: var(--primary-background-color);
+  border-color: transparent;
 }
 
 .cardContainer {
@@ -460,7 +511,7 @@ body {
 .cardContainer .box {
   width: 290px;
   height: 290px;
-  background: #292F39;
+  background: var(--secondary-background-color);
   position: relative;
   border-radius: 6px;
   -webkit-transition: -webkit-transform 280ms ease;
@@ -522,13 +573,13 @@ body {
   height: 2rem;
   width: 35%;
   border-radius: 0px;
-  background: #323b49;
+  background: var(--button-bg-color);
   border: 0;
   font-family: Steradian;
   font-weight: 900;
   margin-right: .8rem;
-  -webkit-transition: color 280ms, background 280ms;
-  transition: color 280ms, background 280ms;
+  -webkit-transition: color 280ms, background 280ms, border-color 280ms;
+  transition: color 280ms, background 280ms, border-color 280ms;
 }
 
 .cardContainer .box .inner-btn .subBtn {
@@ -536,7 +587,7 @@ body {
   width: -moz-max-content;
   width: max-content;
   height: 42px;
-  border: 2px solid #2E3746;
+  border: 2px solid var(--button-border-color);
   background: transparent;
   font-size: 16px;
   letter-spacing: .06rem;
@@ -548,31 +599,37 @@ body {
 .cardContainer .box .inner-btn .pinkBtn:hover {
   background: var(--light-pink-color);
   color: var(--primary-background-color);
+  border-color: transparent;
 }
 
 .cardContainer .box .inner-btn .greenBtn:hover {
   background: var(--light-green-color);
   color: var(--primary-background-color);
+  border-color: transparent;
 }
 
 .cardContainer .box .inner-btn .redBtn:hover {
   background: var(--light-red-color);
   color: var(--primary-background-color);
+  border-color: transparent;
 }
 
 .cardContainer .box .inner-btn .blueBtn:hover {
   background: var(--light-blue-color);
   color: var(--primary-background-color);
+  border-color: transparent;
 }
 
 .cardContainer .box .inner-btn .orangeBtn:hover {
   background: var(--light-orange-color);
   color: var(--primary-background-color);
+  border-color: transparent;
 }
 
 .cardContainer .box .inner-btn .purpleBtn:hover {
   background: var(--light-purple-color);
   color: var(--primary-background-color);
+  border-color: transparent;
 }
 
 .cardContainer .box .center {
@@ -771,6 +828,7 @@ body {
     max-width: 600px;
     margin-top: 1.5rem;
     margin-left: 1rem;
+    color: var(--basic-text-color);
     font-size: 16px;
   }
   .section .info span {
@@ -801,8 +859,6 @@ body {
     font-size: 12px;
     letter-spacing: .05rem;
     word-spacing: 0rem;
-    -webkit-box-shadow: 0px 2px 10px #00000015;
-            box-shadow: 0px 2px 10px #00000015;
     -webkit-transition: color 280ms, background 280ms;
     transition: color 280ms, background 280ms;
   }
@@ -842,7 +898,7 @@ body {
   }
   .section .formPanel .formCard input, .section .formPanel .formCard textarea {
     outline: 0;
-    border: 2px solid #2E3746;
+    border: 2px solid var(--button-border-color);
     background: transparent;
     width: 262px;
     height: 42px;

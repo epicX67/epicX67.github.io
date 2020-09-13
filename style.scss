@@ -25,11 +25,22 @@
 :root{
     --primary-background-color: #232931;
     --secondary-background-color: #292F39;
+
+ //   --primary-background-color: #f8f8f8;
+  //  --secondary-background-color: #e7e7e7;
+
     --disabled-ico-color: #637183;
     --enabled-ico-color: #BDF3FF;
     --accent-color: #4ECCA3;
     --primary-text-color: #BBEBFF;
-    --basic-text-color: #FFFFFF;
+    --basic-text-color: #E3E3E3;
+
+    --button-bg-color: #323B49;
+    --button-border-color: #2E3746;
+
+    --nameFilter: invert(71%) sepia(31%) saturate(579%) hue-rotate(292deg) brightness(114%) contrast(106%);
+    --emailFilter: invert(71%) sepia(6%) saturate(1807%) hue-rotate(204deg) brightness(104%) contrast(105%);
+    --msgFilter: invert(89%) sepia(24%) saturate(401%) hue-rotate(83deg) brightness(103%) contrast(104%);
 
 
     //SubAccent Colors
@@ -93,7 +104,9 @@
 
 body{
     background: var(--primary-background-color);
+    color: var(--basic-text-color);
     position: relative;
+    transition: color 280ms, background 280ms;
 }
 
 .sideBar{
@@ -156,7 +169,7 @@ body{
         background: var(--primary-background-color);
     }
 
-    transition: width 280ms 100ms ease;
+    transition: width 280ms 100ms ease, background 280ms;
 }
 
 .sideBar:hover{
@@ -219,7 +232,7 @@ body{
         position: absolute;
         height: 12px;
         width: 35px;
-        background: #BBEBFF;
+        background: var(--light-blue-color);
         bottom: 26%;
         right: -50px;
         animation: console 1s ease-in-out infinite;
@@ -229,7 +242,7 @@ body{
         max-width: 600px;
         margin-top: 2rem;
         font-family: avenir;
-        color: #E3E3E3;
+        color: var(--basic-text-color);
         line-height: 168%;
         font-size: 20px;
         span{
@@ -248,7 +261,7 @@ body{
             padding-left: 2rem;
             padding-right: 2rem;
             margin-left: 1rem;
-            background: #292F39;
+            background: var(--secondary-background-color);
             border: 0;
             border-radius: 3px;
 
@@ -258,20 +271,19 @@ body{
             letter-spacing: .05rem;
             word-spacing: .3rem;
             //color: #BBEBFF;
-            box-shadow: 0px 2px 10px #00000015;
             transition: color 280ms, background 280ms;
         }
         .blueBtn:hover{
             background: var(--light-blue-color);
-            color: #292F39;
+            color: var(--secondary-background-color);
         }
         .greenBtn:hover{
             background: var(--light-green-color);
-            color: #292F39;
+            color: var(--secondary-background-color);
         }
         button:hover{
             //background: #BBEBFF;
-            color: #292F39;
+            color: var(--secondary-background-color);
         }
     }
 
@@ -280,7 +292,7 @@ body{
         margin-left: 2rem;
         //height: 412px;
         width: 323px;
-        background: #292F39;
+        background: var(--secondary-background-color);
         border-radius: 6px;
         display: flex;
         flex-direction: column;
@@ -299,28 +311,50 @@ body{
                 width: 38px;
             }
 
+            .icoName{
+                filter: var(--nameFilter);
+            }
+            .icoEmail{
+                filter: var(--emailFilter);
+            }
+            .icoMsg{
+                filter: var(--msgFilter);
+            }
+
             input, textarea{
                 outline: 0;
-                border: 2px solid #2E3746;
+                border: 2px solid var(--button-border-color);
                 background: transparent;
                 width: 262px;
                 height: 42px;
                 margin-left: 2rem;
                 
-                color: rgb(184, 207, 255);
+                
                 font-size: 1.2rem;
                 padding-left: .5rem;
                 padding-right: .5rem;
             }
+            input::placeholder{
+                color: var(--disabled-ico-color);
+            }
             input:focus{
-                border-color: #344461;
+                border-color: var(--disabled-ico-color);
+            }
+            .inputName{
+                color: var(--light-pink-color);
+            }
+            .inputEmail{
+                color: var(--light-purple-color);
+            }
+            .inputMessage{
+                color: var(--light-green-color);
             }
 
             button{
                 height: 2rem;
                 width: 35%;
                 border-radius: 0px;
-                background: #323b49;
+                background: var(--button-bg-color);
                 border: 0;
                 //border: 2px solid #637183;
                 font-family: Steradian;
@@ -332,18 +366,20 @@ body{
             .sendBtn{
                 width: max-content;
                 height: 42px;
-                border: 2px solid #2E3746;
+                border: 2px solid var(--button-border-color);
                 background: transparent;
                 font-size: 16px;
                 letter-spacing: .06rem;
                 margin: 0;
                 padding-left: 1.5rem;
                 padding-right: 1.5rem;
+                transition: border-color 280ms, color 280ms, background 280ms;
                 //padding: 0;
             }
             .orangeBtn:hover{
                 background: var(--light-orange-color);
                 color: var(--primary-background-color);
+                border-color: transparent;
             }
         }
     }
@@ -360,7 +396,7 @@ body{
     .box{
         width: 290px;
         height: 290px;
-        background: #292F39;
+        background: var(--secondary-background-color);
         position: relative;
         border-radius: 6px;
         transition: transform 280ms ease;
@@ -400,18 +436,18 @@ body{
                 height: 2rem;
                 width: 35%;
                 border-radius: 0px;
-                background: #323b49;
+                background: var(--button-bg-color);
                 border: 0;
                 //border: 2px solid #637183;
                 font-family: Steradian;
                 font-weight: 900;
                 margin-right: .8rem;
-                transition: color 280ms, background 280ms;
+                transition: color 280ms, background 280ms, border-color 280ms;
             }
             .subBtn{
                 width: max-content;
                 height: 42px;
-                border: 2px solid #2E3746;
+                border: 2px solid var(--button-border-color);
                 background: transparent;
                 font-size: 16px;
                 letter-spacing: .06rem;
@@ -423,26 +459,32 @@ body{
             .pinkBtn:hover{
                 background: var(--light-pink-color);
                 color: var(--primary-background-color);
+                border-color: transparent;
             }
             .greenBtn:hover{
                 background: var(--light-green-color);
                 color: var(--primary-background-color);
+                border-color: transparent;
             }
             .redBtn:hover{
                 background: var(--light-red-color);
                 color: var(--primary-background-color);
+                border-color: transparent;
             }
             .blueBtn:hover{
                 background: var(--light-blue-color);
                 color: var(--primary-background-color);
+                border-color: transparent;
             }
             .orangeBtn:hover{
                 background: var(--light-orange-color);
                 color: var(--primary-background-color);
+                border-color: transparent;
             }
             .purpleBtn:hover{
                 background: var(--light-purple-color);
                 color: var(--primary-background-color);
+                border-color: transparent;
             }
         }
         .center{
@@ -597,7 +639,7 @@ body{
             max-width: 600px;
             margin-top: 1.5rem;
             margin-left: 1rem;
-            
+            color: var(--basic-text-color);
             font-size: 16px;
             span{
                 font-size: 30px;
@@ -623,8 +665,6 @@ body{
                 font-size: 12px;
                 letter-spacing: .05rem;
                 word-spacing: 0rem;
-                //color: #BBEBFF;
-                box-shadow: 0px 2px 10px #00000015;
                 transition: color 280ms, background 280ms;
             }
         }
@@ -653,7 +693,7 @@ body{
                 }
                 input, textarea{
                     outline: 0;
-                    border: 2px solid #2E3746;
+                    border: 2px solid var(--button-border-color);
                     background: transparent;
                     width: 262px;
                     height: 42px;

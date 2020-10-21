@@ -240,7 +240,7 @@ body {
   top: 0;
   height: 100%;
   width: 360px;
-  padding-right: 3rem;
+  padding-right: 1rem;
   padding-left: 1rem;
   background: var(--secondary-background-color);
   z-index: 11;
@@ -250,8 +250,8 @@ body {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  -webkit-transform: translateX(410px);
-          transform: translateX(410px);
+  -webkit-transform: translateX(375px);
+          transform: translateX(375px);
   -webkit-transition: -webkit-transform 300ms ease-in;
   transition: -webkit-transform 300ms ease-in;
   transition: transform 300ms ease-in;
@@ -296,7 +296,9 @@ body {
 }
 
 .recentPanel .listActivity {
-  width: auto;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   height: calc(100% - 70px);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -305,11 +307,14 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  overflow: auto;
+  overflow-y: visible;
+  overflow-x: hidden;
 }
 
 .recentPanel .listActivity .card {
   position: relative;
-  width: 100%;
+  width: auto;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
@@ -352,12 +357,15 @@ body {
   font-family: 'Steradian';
   letter-spacing: .08rem;
   line-height: 1.3rem;
-  font-size: .9rem;
+  font-size: .8rem;
   padding: .5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   background: var(--button-bg-color);
   margin-top: 1rem;
-  width: 100px;
   text-align: center;
+  border: 2px solid var(--button-border-color);
+  background: transparent;
   -webkit-transition: color 280ms, background 280ms;
   transition: color 280ms, background 280ms;
   cursor: pointer;
@@ -367,6 +375,11 @@ body {
   background: var(--light-blue-color);
   color: var(--primary-background-color);
   border-color: transparent;
+}
+
+.recentPanel .listActivity::-webkit-scrollbar {
+  background: transparent;
+  width: 0px;
 }
 
 .recentPanel:hover {
@@ -881,6 +894,16 @@ body {
   background: var(--light-pink-color);
 }
 
+@media (min-width: 1480px) {
+  .recentPanel {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  .recentPanel .open {
+    display: none;
+  }
+}
+
 @media (max-width: 574px) {
   .sideBar {
     height: 70px;
@@ -1081,6 +1104,37 @@ body {
             justify-content: center;
     gap: 2rem;
     margin-bottom: 6rem;
+  }
+  .recentPanel {
+    width: 300px;
+    -webkit-transform: translateX(330px);
+            transform: translateX(330px);
+  }
+  .recentPanel .title {
+    margin-top: 2.5rem;
+    position: absolute;
+    top: 0;
+    height: 86px;
+    font-family: 'Steradian', sans-serif;
+    font-size: 1.8rem;
+  }
+  .recentPanel .open {
+    top: unset;
+    bottom: 0;
+    margin-bottom: 7rem;
+    -webkit-transition: opacity 280ms;
+    transition: opacity 280ms;
+  }
+  .recentPanel .listActivity {
+    width: 100%;
+    height: calc(100% - 100px);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 /*# sourceMappingURL=style.css.map */

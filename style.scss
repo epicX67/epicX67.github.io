@@ -192,14 +192,14 @@ body{
     //bottom: 0;
     height: 100%;
     width: 360px;
-    padding-right: 3rem;
+    padding-right: 1rem;
     padding-left: 1rem;
     background: var(--secondary-background-color);
     //background: red;
     z-index: 11;
     display: flex;
     align-items: flex-end;
-    transform: translateX(410px);
+    transform: translateX(375px);
     transition: transform 300ms ease-in;
     .title{
         margin-top: 1rem;
@@ -236,15 +236,18 @@ body{
 
     .listActivity{
         //background: red;
-        width: auto;
+        width: max-content;
         height: calc(100% - 70px);
         display: flex;
         flex-direction: column;
+        overflow: auto;
+        overflow-y: visible;
+        overflow-x: hidden;
 
 
         .card{
             position: relative;
-            width: 100%;
+            width: auto;
             height: max-content;
             background: var(--primary-background-color);
             margin-bottom: 1rem;
@@ -283,12 +286,16 @@ body{
                 font-family: 'Steradian';
                 letter-spacing: .08rem;
                 line-height: 1.3rem;
-                font-size: .9rem;
+                font-size: .8rem;
                 padding: .5rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
                 background: var(--button-bg-color);
                 margin-top: 1rem;
-                width: 100px;
+                //width: 100px;
                 text-align: center;
+                border: 2px solid var(--button-border-color);
+                background: transparent;
                 transition: color 280ms, background 280ms;
                 cursor: pointer;
 
@@ -300,6 +307,11 @@ body{
                 border-color: transparent;
             }
         }
+    }
+
+    .listActivity::-webkit-scrollbar{
+        background: transparent;
+        width: 0px;
     }
 }
 
@@ -689,6 +701,16 @@ body{
 
 
 
+@media (min-width: 1480px) {
+
+    .recentPanel{
+        transform: translateX(0);
+        .open{
+            display: none;
+        }
+    }
+}
+
 
 
 
@@ -861,5 +883,36 @@ body{
         justify-content: center;
         gap: 2rem;
         margin-bottom: 6rem;
+    }
+
+
+    .recentPanel{
+        width: 300px;
+        transform: translateX(330px);
+        .title{
+            margin-top: 2.5rem;
+            position: absolute;
+            top: 0;
+            height: 86px;
+            font-family: 'Steradian', sans-serif;
+            font-size: 1.8rem;
+            // span{
+            //     font-size: 2.2rem;
+            // }
+        }
+        .open{
+            top: unset;
+            bottom: 0;
+            margin-bottom: 7rem;
+            transition: opacity 280ms;
+        }
+    
+        .listActivity{
+            //background: red;
+            width: 100%;
+            height: calc(100% - 100px);
+            display: flex;
+            flex-direction: column;
+        }
     }
 }

@@ -161,3 +161,251 @@ function removeColorAttributes(id){
         }
     }
 }
+const myEmail = "souravgain605@gmail.com";
+const orgName = "Sourav Gain"
+const username = "epicX67"
+getRecentActivity();
+
+function getRecentActivity(){
+    const repos = [
+        {
+            org: false,
+            user: "epicX67",
+            repo: "documents_KrunkerResourceSwapper"
+        },
+        {
+            org: false,
+            user: "epicX67",
+            repo: "epicX67.github.io"
+        },
+        {
+            org: true,
+            user: "SHRP-Devices",
+            repo: "device_coolpad_c103"
+        },
+        {
+            org: true,
+            user: "SKYHAWK-Recovery-Project",
+            repo: "shrp_bootable_recovery"
+        },
+        {
+            org: true,
+            user: "SKYHAWK-Recovery-Project",
+            repo: "shrp_build"
+        },
+    ]
+
+
+    const data = fetchData(repos);
+}
+
+function fetchData(repos){
+    var data;
+
+    for(i = 0; i < repos.length; i++){
+        var repoName = repos[i].repo;
+        processNext('https://api.github.com/repos/' + repos[i].user + '/' + repos[i].repo + '/commits', repoName)
+    }
+}
+
+function processNext(url, repoName){
+    fetch(url)
+    .then(res =>{
+        res.json()
+        .then(values=>{
+            console.log(repoName)
+            filterData(values, repoName);
+        })
+    })
+
+}
+
+function filterData(data, repoName){
+    var j = 0;
+    for(i = 0; i < data.length; i++){
+        if(data[i].commit.author.email == myEmail || data[i].commit.author.name == username || data[i].commit.author.email == orgName){
+            renderCard(data[i], repoName);
+            return;
+        }
+    }
+}
+
+
+function renderCard(data, repoN){
+    var list = document.getElementById('recentList');
+
+    var card = document.createElement('div');
+    card.classList.add("card")
+    
+
+    var commitTime = document.createElement('div');
+    commitTime.classList.add("commitTime")
+    commitTime.innerHTML = getTime(data.commit.author.date);
+
+    var repoName = document.createElement('div');
+    repoName.classList.add("repoName")
+    repoName.innerHTML = repoN;
+
+    var commitName = document.createElement('div');
+    commitName.classList.add("commitName")
+    commitName.innerHTML = data.commit.message
+
+    var a = document.createElement('a');
+    a.classList.add("commitLink", "blueColor", "blueBtn")
+    a.innerHTML = "Open"
+    a.setAttribute('href', data.html_url)
+
+    card.appendChild(commitTime)
+    card.appendChild(repoName)
+    card.appendChild(commitName)
+    card.appendChild(a)
+    list.appendChild(card)
+}
+
+function getRepoName(x){
+    return x.substring(29, x.indexOf('/', 30));
+}
+
+function getTime(commitTime){
+    var tmp,tmp2;
+    var date = commitTime.substring(0, commitTime.indexOf('T'));
+    var dateData = date.split('-')
+    var time = commitTime.substring(commitTime.indexOf('T') + 1, commitTime.indexOf('Z'));
+    var timeData = time.split(':')
+
+
+
+
+
+    var today = new Date();
+    var currYear = today.getFullYear();
+    var currMonth = today.getMonth()+1;
+    var currDay = today.getDate();
+
+    var currHour = today.getHours();
+    var currMinute = today.getMinutes();
+    var currSecond = today.getSeconds();
+
+
+    
+    if(currYear - dateData[0] != 0){
+        return (currYear - dateData[0]) + " years ago"
+    }
+
+    if(currMonth - dateData[1] != 0){
+        return (currMonth - dateData[1]) + " months ago"
+    }
+
+    if(currDay - dateData[2] != 0){
+        return (currDay - dateData[2]) + " days ago"
+    }
+
+
+    if(currHour - timeData[0] != 0){
+        return (currHour - timeData[0]) + "h ago"
+    }
+
+    if(currMinute - timeData[1] != 0){
+        return (currMinute - timeData[1]) + "min ago"
+    }
+
+    if(currSecond - timeData[2] != 0){
+        return (currSecond - timeData[2]) + "sec ago"
+    }
+
+    //Year month date
+    //Hour mint sec
+}
+
+// const ref = {
+//     "sha": "81c1bb37bb45f6c48c7bdf2f6e4b06f8105af12b",
+//     "node_id": "MDY6Q29tbWl0MjA3NTkzODgwOjgxYzFiYjM3YmI0NWY2YzQ4YzdiZGYyZjZlNGIwNmY4MTA1YWYxMmI=",
+//     "commit": {
+//       "author": {
+//         "name": "Giovanni Gualtieri",
+//         "email": "ggualtierone@gmail.com",
+//         "date": "2020-10-13T07:40:28Z"
+//       },
+//       "committer": {
+//         "name": "GitHub",
+//         "email": "noreply@github.com",
+//         "date": "2020-10-13T07:40:28Z"
+//       },
+//       "message": "Merge pull request #33 from corsicanu/android-9.0\n\nMerge teamwin/android_bootable_recovery",
+//       "tree": {
+//         "sha": "27de2985e68a6b76aed4494f930c3be9c8020ac6",
+//         "url": "https://api.github.com/repos/SKYHAWK-Recovery-Project/shrp_bootable_recovery/git/trees/27de2985e68a6b76aed4494f930c3be9c8020ac6"
+//       },
+//       "url": "https://api.github.com/repos/SKYHAWK-Recovery-Project/shrp_bootable_recovery/git/commits/81c1bb37bb45f6c48c7bdf2f6e4b06f8105af12b",
+//       "comment_count": 0,
+//       "verification": {
+//         "verified": true,
+//         "reason": "valid",
+//         "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsBcBAABCAAQBQJfhVnsCRBK7hj4Ov3rIwAAdHIIADwhow6LAU6CAku0slnnw6Qq\nZr+IqbOx+WAv5asLtXs8+PABK2lv5ai0yKnPn8SQh64G+osHNadx72V/zkSMdeIc\nSBdg1acVlI+JrItpupolwSF8CUo8JuyFudo/qSTD3t4U17ShIWl2vyakdUFHITAX\nkMZR/I6C1h9fPXZyiDjIWgT0Zx4OUKL7DOyV4PvAThYJR7Q5LLvVnJtmkzVnEc5o\nSYWjIm5EW4vXeC92j1qHQxf4x85Zg+NLdYcv+X+qB4unqLOqLMgI4fxVmAze9NQr\n1u/+0581NCUUAgf+mqHOezqOPUpADcJ5ynxdv1duglY7JAToT1/P69AofUpxEhA=\n=da4E\n-----END PGP SIGNATURE-----\n",
+//         "payload": "tree 27de2985e68a6b76aed4494f930c3be9c8020ac6\nparent 8e868908f1697e1844bf14856b9753da66459403\nparent c2da625a44dc795b84247ace1aa582e3ef8dac77\nauthor Giovanni Gualtieri <ggualtierone@gmail.com> 1602574828 +0200\ncommitter GitHub <noreply@github.com> 1602574828 +0200\n\nMerge pull request #33 from corsicanu/android-9.0\n\nMerge teamwin/android_bootable_recovery"
+//       }
+//     },
+//     "url": "https://api.github.com/repos/SKYHAWK-Recovery-Project/shrp_bootable_recovery/commits/81c1bb37bb45f6c48c7bdf2f6e4b06f8105af12b",
+//     "html_url": "https://github.com/SKYHAWK-Recovery-Project/shrp_bootable_recovery/commit/81c1bb37bb45f6c48c7bdf2f6e4b06f8105af12b",
+//     "comments_url": "https://api.github.com/repos/SKYHAWK-Recovery-Project/shrp_bootable_recovery/commits/81c1bb37bb45f6c48c7bdf2f6e4b06f8105af12b/comments",
+//     "author": {
+//       "login": "Giovix92",
+//       "id": 19226770,
+//       "node_id": "MDQ6VXNlcjE5MjI2Nzcw",
+//       "avatar_url": "https://avatars0.githubusercontent.com/u/19226770?v=4",
+//       "gravatar_id": "",
+//       "url": "https://api.github.com/users/Giovix92",
+//       "html_url": "https://github.com/Giovix92",
+//       "followers_url": "https://api.github.com/users/Giovix92/followers",
+//       "following_url": "https://api.github.com/users/Giovix92/following{/other_user}",
+//       "gists_url": "https://api.github.com/users/Giovix92/gists{/gist_id}",
+//       "starred_url": "https://api.github.com/users/Giovix92/starred{/owner}{/repo}",
+//       "subscriptions_url": "https://api.github.com/users/Giovix92/subscriptions",
+//       "organizations_url": "https://api.github.com/users/Giovix92/orgs",
+//       "repos_url": "https://api.github.com/users/Giovix92/repos",
+//       "events_url": "https://api.github.com/users/Giovix92/events{/privacy}",
+//       "received_events_url": "https://api.github.com/users/Giovix92/received_events",
+//       "type": "User",
+//       "site_admin": false
+//     },
+//     "committer": {
+//       "login": "web-flow",
+//       "id": 19864447,
+//       "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+//       "avatar_url": "https://avatars3.githubusercontent.com/u/19864447?v=4",
+//       "gravatar_id": "",
+//       "url": "https://api.github.com/users/web-flow",
+//       "html_url": "https://github.com/web-flow",
+//       "followers_url": "https://api.github.com/users/web-flow/followers",
+//       "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+//       "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+//       "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+//       "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+//       "organizations_url": "https://api.github.com/users/web-flow/orgs",
+//       "repos_url": "https://api.github.com/users/web-flow/repos",
+//       "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+//       "received_events_url": "https://api.github.com/users/web-flow/received_events",
+//       "type": "User",
+//       "site_admin": false
+//     },
+//     "parents": [
+//       {
+//         "sha": "8e868908f1697e1844bf14856b9753da66459403",
+//         "url": "https://api.github.com/repos/SKYHAWK-Recovery-Project/shrp_bootable_recovery/commits/8e868908f1697e1844bf14856b9753da66459403",
+//         "html_url": "https://github.com/SKYHAWK-Recovery-Project/shrp_bootable_recovery/commit/8e868908f1697e1844bf14856b9753da66459403"
+//       },
+//       {
+//         "sha": "c2da625a44dc795b84247ace1aa582e3ef8dac77",
+//         "url": "https://api.github.com/repos/SKYHAWK-Recovery-Project/shrp_bootable_recovery/commits/c2da625a44dc795b84247ace1aa582e3ef8dac77",
+//         "html_url": "https://github.com/SKYHAWK-Recovery-Project/shrp_bootable_recovery/commit/c2da625a44dc795b84247ace1aa582e3ef8dac77"
+//       }
+//     ]
+//   },
+
+
+  
+// var today = new Date();
+// var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+// var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+// var dateTime = date+' '+time;
+//2018-8-3 11:12:40

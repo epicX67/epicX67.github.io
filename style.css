@@ -265,6 +265,7 @@ body {
   height: 86px;
   font-family: 'Steradian', sans-serif;
   font-size: 1.8rem;
+  word-wrap: break-word;
 }
 
 .recentPanel .open {

@@ -200,7 +200,7 @@ body{
     display: flex;
     align-items: flex-end;
     transform: translateX(375px);
-    transition: transform 300ms ease-in;
+    transition: transform 300ms ease-in, background 280ms;
     .title{
         margin-top: 1rem;
         position: absolute;
@@ -231,7 +231,7 @@ body{
         align-items: center;
         z-index: -1;
 
-        transition: opacity 280ms;
+        transition: opacity 280ms, background 280ms, color 280ms;
     }
 
     .listActivity{
@@ -251,8 +251,8 @@ body{
             height: max-content;
             background: var(--primary-background-color);
             margin-bottom: 1rem;
-
             padding: 1rem;
+            transition: background 280ms;
 
             .repoName{
                 margin-top: 1rem;
@@ -288,16 +288,16 @@ body{
                 letter-spacing: .08rem;
                 line-height: 1.3rem;
                 font-size: .8rem;
-                padding: .5rem;
-                padding-left: 1rem;
-                padding-right: 1rem;
+                padding: .3rem;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
                 background: var(--button-bg-color);
                 margin-top: 1rem;
                 //width: 100px;
                 text-align: center;
                 border: 2px solid var(--button-border-color);
                 background: transparent;
-                transition: color 280ms, background 280ms;
+                transition: color 280ms, background 280ms, border-color 280ms;
                 cursor: pointer;
 
             }
@@ -911,9 +911,10 @@ body{
         .listActivity{
             //background: red;
             width: 100%;
-            height: calc(100% - 100px);
+            height: calc(100% - 100px - 4rem);
             display: flex;
             flex-direction: column;
+            padding-bottom: 4rem;
         }
     }
 }

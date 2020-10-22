@@ -750,7 +750,6 @@ body{
             }
             transition: background 280ms;
         }
-        transition: width 280ms 100ms ease;
     }
     .sideBar:hover{
         width: 100%;
@@ -905,7 +904,6 @@ body{
             top: unset;
             bottom: 0;
             margin-bottom: 7rem;
-            transition: opacity 280ms;
         }
     
         .listActivity{

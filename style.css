@@ -927,8 +927,6 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -webkit-transition: width 280ms 100ms ease;
-    transition: width 280ms 100ms ease;
   }
   .sideBar .container {
     width: 100%;
@@ -1125,8 +1123,6 @@ body {
     top: unset;
     bottom: 0;
     margin-bottom: 7rem;
-    -webkit-transition: opacity 280ms;
-    transition: opacity 280ms;
   }
   .recentPanel .listActivity {
     width: 100%;

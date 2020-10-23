@@ -95,12 +95,12 @@ async function changeSection(id){
     if(activeSection==id){
         return;
     }
-    document.getElementById(activeSection).style["opacity"]="0%";
+    document.getElementById(activeSection).style["opacity"]="0";
     await sleep(180);
     document.getElementById(activeSection).style["display"]="none";
     document.getElementById(id).style["display"]="block";
     await sleep(100);
-    document.getElementById(id).style["opacity"]="100%";
+    document.getElementById(id).style["opacity"]="100";
 }
 
 function getActiveSection(){

@@ -166,7 +166,11 @@ const repos = [
     {
         org: false,
         user: "epicX67",
-        repo: "documents_KrunkerResourceSwapper"
+        repo: "documents_KrunkerResourceSwapper",
+        download: {
+            btntxt: 'Download',
+            url: 'https://github.com/epicX67/documents_KrunkerResourceSwapper/archive/master.zip'
+        }
     },
     {
         org: false,
@@ -192,7 +196,11 @@ const repos = [
     {
         org: true,
         user: "Xperiement",
-        repo: "build_pc"
+        repo: "build_pc",
+        download: {
+            btntxt: 'Try',
+            url: 'https://xperiement.github.io/build_pc/'
+        }
     },
 
     {
@@ -211,13 +219,21 @@ const repos = [
     {
         org: true,
         user: "SKYHAWK-Recovery-Project",
-        repo: "skyhawk-recovery-project.github.io"
+        repo: "skyhawk-recovery-project.github.io",
+        download: {
+            btntxt: 'Visit',
+            url: 'https://skyhawk-recovery-project.github.io'
+        }
     },
 
     {
         org: true,
         user: "SKYHAWK-Recovery-Project",
-        repo: "themeBuilder_extraResources"
+        repo: "themeBuilder_extraResources",
+        download: {
+            btntxt: 'Download letest',
+            url: 'https://github.com/SKYHAWK-Recovery-Project/themeBuilder_extraResources/archive/master.zip'
+        }
     },
 ]
 
@@ -233,7 +249,7 @@ async function getRecentActivity(){
     const forLoop = async _ => {
         for (let i = 0; i < repos.length; i++) {
             var repoName = repos[i].repo
-            var tmpObj = fetchAll('https://api.github.com/repos/' + repos[i].user + '/' + repos[i].repo + '/commits', repoName)
+            var tmpObj = fetchAll('https://api.github.com/repos/' + repos[i].user + '/' + repos[i].repo + '/commits', repoName, repos[i].download)
             commits.push(tmpObj)
             
         }
@@ -260,7 +276,7 @@ async function getRecentActivity(){
     } 
 }
 
-async function fetchAll(url, repoName){
+async function fetchAll(url, repoName, downloadObj){
     let x = await fetch(url)
     let values = await x.json()
     for (let i = 0; i < values.length; i++) {
@@ -269,7 +285,8 @@ async function fetchAll(url, repoName){
                 "repoName": repoName,
                 "msg": values[i].commit.message,
                 "url": values[i].html_url,
-                "time": getTimeObj(values[i].commit.author.date)
+                "time": getTimeObj(values[i].commit.author.date),
+                "download": downloadObj
             }
             return value;
         }
@@ -298,12 +315,22 @@ function renderCard(data){
     var a = document.createElement('a');
     a.classList.add("commitLink", "blueColor", "blueBtn")
     a.innerHTML = "Open"
+    a.setAttribute('target', 'blank')
     a.setAttribute('href', data.url)
 
     card.appendChild(commitTime)
     card.appendChild(repoName)
     card.appendChild(commitName)
     card.appendChild(a)
+
+    if(data.download){
+        var b = document.createElement('a');
+        b.classList.add("commitLink", "blueColor", "blueBtn")
+        b.innerHTML = data.download.btntxt
+        b.setAttribute('href', data.download.url)
+        b.setAttribute('target', 'blank')
+        card.appendChild(b)
+    }
     list.appendChild(card)
 }
 

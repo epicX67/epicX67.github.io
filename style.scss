@@ -263,8 +263,8 @@ body{
             .commitName{
                 margin-top: .5rem;
                 font-family: 'avenir';
-                letter-spacing: .05rem;
-                line-height: 1.3rem;
+                letter-spacing: 1px;
+                line-height: 1.58rem;
                 font-size: .9rem;
                 display: block;
             }
@@ -293,6 +293,7 @@ body{
                 padding-right: 1.5rem;
                 background: var(--button-bg-color);
                 margin-top: 1rem;
+                margin-left: 1rem;
                 //width: 100px;
                 text-align: center;
                 border: 2px solid var(--button-border-color);
@@ -385,10 +386,18 @@ body{
         margin-top: 2rem;
         font-family: avenir;
         color: var(--basic-text-color);
-        line-height: 168%;
+        line-height: 190%;
+        letter-spacing: 1px;
         font-size: 20px;
         span{
+            font-weight: 400;
             font-size: 36px;
+        }
+        .bold{
+            font-family: 'Steradian';
+            font-size: 20px;
+            word-spacing: 5px;
+            margin-left: .3rem;
         }
     }
     .btnPanel{
@@ -410,13 +419,17 @@ body{
             font-family: Steradian;
             font-weight: 900;
             font-size: 15px;
-            letter-spacing: .05rem;
+            letter-spacing: 1px;
             word-spacing: .3rem;
             //color: #BBEBFF;
             transition: color 280ms, background 280ms;
         }
         .blueBtn:hover{
             background: var(--light-blue-color);
+            color: var(--secondary-background-color);
+        }
+        .pinkBtn:hover{
+            background: var(--light-pink-color);
             color: var(--secondary-background-color);
         }
         .greenBtn:hover{
@@ -533,6 +546,7 @@ body{
     display: grid;
     grid-template-columns: repeat(auto-fill,290px);
     gap: 2rem;
+    margin-bottom: 4rem;
 
 
     .box{
@@ -576,7 +590,6 @@ body{
             margin: 1.5rem;
             button{
                 height: 2rem;
-                width: 35%;
                 border-radius: 0px;
                 background: var(--button-bg-color);
                 border: 0;
@@ -585,6 +598,9 @@ body{
                 font-weight: 900;
                 margin-right: .8rem;
                 transition: color 280ms, background 280ms, border-color 280ms;
+                letter-spacing: 1px;
+                padding-left: 10px;
+                padding-right: 10px;
             }
             .subBtn{
                 width: max-content;
@@ -617,6 +633,10 @@ body{
                 background: var(--light-blue-color);
                 color: var(--primary-background-color);
                 border-color: transparent;
+            }
+            .pinkBtn:hover{
+                background: var(--light-pink-color);
+                color: var(--secondary-background-color);
             }
             .orangeBtn:hover{
                 background: var(--light-orange-color);
@@ -654,6 +674,8 @@ body{
         user-select: none;
         clip-path: circle(25% at 0% 0%);
         color: transparent;
+        letter-spacing: 1px;
+        line-height: 1.7rem;
 
 
         p{
@@ -698,6 +720,9 @@ body{
     .pinkBgColor:hover{
         background: var(--light-pink-color);
     }
+}
+.kustom{
+    transform: translateX(-65px);
 }
 
 
@@ -914,5 +939,9 @@ body{
             flex-direction: column;
             padding-bottom: 4rem;
         }
+    }
+
+    .kustom{
+        display: none !important;
     }
 }

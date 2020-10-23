@@ -21,19 +21,19 @@
 
 @-webkit-keyframes console {
   50% {
-    opacity: 0%;
+    opacity: 0;
   }
   100% {
-    opacity: 100%;
+    opacity: 100;
   }
 }
 
 @keyframes console {
   50% {
-    opacity: 0%;
+    opacity: 0;
   }
   100% {
-    opacity: 100%;
+    opacity: 100;
   }
 }
 
@@ -209,7 +209,7 @@ body {
 }
 
 .sideBar .container .rm {
-  opacity: 0%;
+  opacity: 0;
   -webkit-transition: opacity 200ms 0ms;
   transition: opacity 200ms 0ms;
 }
@@ -229,7 +229,7 @@ body {
 }
 
 .sideBar:hover .container .rm {
-  opacity: 100%;
+  opacity: 100;
   -webkit-transition: opacity 280ms 200ms;
   transition: opacity 280ms 200ms;
 }
@@ -393,7 +393,7 @@ body {
 
 .recentPanel:hover .open {
   pointer-events: none;
-  opacity: 0%;
+  opacity: 0;
 }
 
 .acc {
@@ -895,7 +895,7 @@ body {
 .cardContainer .cardinfo:hover .ico {
   -webkit-transition: opacity 280ms;
   transition: opacity 280ms;
-  opacity: 0%;
+  opacity: 0;
 }
 
 .cardContainer .blueBgColor:hover {
@@ -996,7 +996,7 @@ body {
     transition: width 280ms ease;
   }
   .sideBar:hover .container .rm {
-    opacity: 100%;
+    opacity: 100;
     -webkit-transition: opacity 280ms 200ms;
     transition: opacity 280ms 200ms;
   }
@@ -1032,6 +1032,9 @@ body {
   }
   .section .info span {
     font-size: 30px;
+  }
+  .section .info .bold {
+    font-size: 15px;
   }
   .section .btnPanel {
     margin-top: 2rem;

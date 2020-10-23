@@ -393,39 +393,39 @@ function getTime(T){
 
 
     var today = new Date();
-    var currYear = today.getFullYear();
-    var currMonth = today.getMonth()+1;
-    var currDay = today.getDate();
+    var currYear = today.getUTCFullYear();
+    var currMonth = today.getUTCMonth()+1;
+    var currDay = today.getUTCDate();
 
-    var currHour = today.getHours();
-    var currMinute = today.getMinutes();
-    var currSecond = today.getSeconds();
+    var currHour = today.getUTCHours();
+    var currMinute = today.getUTCMinutes();
+    var currSecond = today.getUTCSeconds();
 
 
     
     if(currYear - T.year != 0){
-        return (currYear - T.year) + " years ago"
+        return ((currYear - T.year) + (currYear - T.year == 1 ? " year ago" : " years ago"))
     }
 
     if(currMonth - T.month != 0){
-        return (currMonth - T.month) + " months ago"
+        return ((currMonth - T.month) + (currMonth - T.month == 1 ? " month ago" :  " months ago"))
     }
 
     if(currDay - T.date != 0){
-        return (currDay - T.date) + " days ago"
+        return ((currDay - T.date) + (currDay - T.date == 1 ? " day ago" : " days ago"))
     }
 
 
     if(currHour - T.hour != 0){
-        return (currHour - T.hour) + "h ago"
+        return ((currHour - T.hour) + (currHour - T.hour == 1 ? " h ago" : " hrs ago"))
     }
 
     if(currMinute - T.minute != 0){
-        return (currMinute - T.minute) + "min ago"
+        return ((currMinute - T.minute) + (currMinute - T.minute == 1 ? " min ago" : " mins ago"))
     }
 
     if(currSecond - T.second != 0){
-        return (currSecond - T.second) + "sec ago"
+        return ((currSecond - T.second) + (currSecond - T.second == 1 ? " sec ago" : " secs ago"))
     }
 
     //Year month date

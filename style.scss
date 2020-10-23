@@ -16,9 +16,9 @@
     font-family: avenir;
 }
 @keyframes console{
-    50%{opacity: 0%;}
+    50%{opacity: 0;}
     100%{
-        opacity: 100%;
+        opacity: 100;
     }
 }
 
@@ -157,7 +157,7 @@ body{
             color: var(--disabled-ico-color);
         }
         .rm{
-            opacity: 0%;
+            opacity: 0;
             transition: opacity 200ms 0ms;
         }
         transition: background 280ms;
@@ -177,7 +177,7 @@ body{
     transition: width 280ms ease;
     .container{
         .rm{
-            opacity: 100%;
+            opacity: 100;
             transition: opacity 280ms 200ms;
         }
     }
@@ -322,7 +322,7 @@ body{
 
     .open{
         pointer-events: none;
-        opacity: 0%;
+        opacity: 0;
     }
 }
 
@@ -699,7 +699,7 @@ body{
         color: var(--primary-background-color);
         .ico{
             transition: opacity 280ms;
-            opacity: 0%;
+            opacity: 0;
         }
     }
     .blueBgColor:hover{
@@ -781,7 +781,7 @@ body{
         transition: width 280ms ease;
         .container{
             .rm{
-                opacity: 100%;
+                opacity: 100;
                 transition: opacity 280ms 200ms;
             }
         }
@@ -819,6 +819,9 @@ body{
             font-size: 16px;
             span{
                 font-size: 30px;
+            }
+            .bold{
+                font-size: 15px;
             }
         }
 

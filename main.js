@@ -5,8 +5,8 @@ const amerForm = document.getElementById('amerForm')
 amerForm.addEventListener('submit', (e)=>{
     console.log('calling')
     e.preventDefault()
-    const amerData = new FormData(amerForm)
-    fetch('https://portfoliofeedback69.herokuapp.com/send', {method: 'post', body: amerData})
+    const amerData = new URLSearchParams(new FormData(amerForm))
+    fetch('https://portfoliofeedback69.herokuapp.com/send', {method: 'post', body: amerData, mode: 'cors'})
     .then((res)=>{
         if(res.status == 200){
             showStatus(true);
@@ -18,7 +18,6 @@ amerForm.addEventListener('submit', (e)=>{
         showStatus(false);
         return;
     })
-    
 })
 
 function showStatus(res){

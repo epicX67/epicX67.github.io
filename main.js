@@ -1,5 +1,60 @@
 var dark=true;
 
+//Form
+const amerForm = document.getElementById('amerForm')
+amerForm.addEventListener('submit', (e)=>{
+    console.log('calling')
+    e.preventDefault()
+    const amerData = new FormData(amerForm)
+    fetch('https://portfoliofeedback69.herokuapp.com/send', {method: 'post', body: amerData})
+    .then((res)=>{
+        if(res.status == 200){
+            showStatus(true);
+        }
+    }).catch((err)=>{
+        showStatus(false);
+    })
+    
+})
+
+function showStatus(res){
+    const okIco = document.getElementById('sIcoOk')
+    const errorIco = document.getElementById('sIcoErr')
+    const stext = document.getElementById('sText')
+    const sBtn = document.getElementById('sBtn')
+    const mainPanel = document.getElementById('feedBackPnl')
+    
+    if(res){
+        if(okIco.classList.contains('rm')){
+            okIco.classList.remove('rm')
+        }
+        if(!errorIco.classList.contains('rm')){
+            errorIco.classList.add('rm')
+        }
+        stext.innerHTML = "Thank you for contacting with me"
+        sBtn.innerHTML = "Close"
+    }else{
+        if(errorIco.classList.contains('rm')){
+            errorIco.classList.remove('rm')
+        }
+        if(!okIco.classList.contains('rm')){
+            okIco.classList.add('rm')
+        }
+        stext.innerHTML = "Something went wrong"
+        sBtn.innerHTML = "Try Again"
+    }
+    mainPanel.style.opacity = 100;
+    mainPanel.style.pointerEvents = 'visible'
+}
+
+function hideStatus(){
+    const mainPanel = document.getElementById('feedBackPnl')
+    mainPanel.style.opacity = 0;
+    mainPanel.style.pointerEvents = 'none'
+}
+
+
+
 function switchMode(){
     if(dark){
         document.getElementById("switchMode").innerHTML='<i class="fas fa-lightbulb"></i>';

@@ -11,7 +11,7 @@
     <script src="https://kit.fontawesome.com/fdd6793349.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="main.js"></script>
+    <script defer src="main.js"></script>
 </head>
 <body>
     <div class="sideBar">
@@ -219,21 +219,27 @@
         <p class="title sideSpacing orangeColor">Contact</p>
         <p class="info sideSpacing">Leave your message here if you have one :p </p>
 
-        <form action="" method="post" class="formPanel">
-            <div class="formCard">
+        <form id="amerForm" class="formPanel">
+            <div id="feedBackPnl" class="feedBackPanel">
+                <img id="sIcoOk" class="statusIco statusOk rm" src="res/images/statusOk.svg" alt="">
+                <img id="sIcoErr" class="statusIco statusError rm" src="res/images/statusError.svg" alt="">
+                <p id="sText" class="statusText">Successful</p>
+                <button type="o" id="sBtn" onclick="hideStatus()" class="sendBtn orangeColor orangeBtn">Ok</button>
+            </div>
+            <label class="formCard">
                 <img class="icoName" src="res/images/signature-solid.svg" alt="">
-                <input class="inputName" type="text" placeholder="Name">
-            </div>
-            <div class="formCard">
+                <input name="name" class="inputName" type="text" placeholder="Name" required>
+            </label>
+            <label class="formCard">
                 <img class="icoEmail" src="res/images/at-solid.svg" alt="">
-                <input class="inputEmail" type="email" placeholder="Email">
-            </div>
-            <div class="formCard">
+                <input name="email" class="inputEmail" type="email" placeholder="Email">
+            </label>
+            <label class="formCard">
                 <img class="icoMsg" src="res/images/keyboard-solid.svg" alt="">
-                <input class="inputMessage" type="text" placeholder="Your message">
-            </div>
+                <input name="message" class="inputMessage" type="text" placeholder="Your message" required>
+            </label>
             <div class="formCard" style="justify-content: flex-end; margin-bottom: 0;">
-                <button class="sendBtn orangeColor orangeBtn">Send</button>
+                <button type="submit" class="sendBtn orangeColor orangeBtn">Send</button>
             </div>
         </form>
     </section>

@@ -543,6 +543,7 @@ body {
 }
 
 .section .formPanel {
+  position: relative;
   margin-top: 2rem;
   margin-left: 2rem;
   width: 323px;
@@ -556,6 +557,104 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 3rem;
+}
+
+.section .formPanel button {
+  height: 2rem;
+  width: 35%;
+  border-radius: 0px;
+  background: var(--button-bg-color);
+  border: 0;
+  font-family: Steradian;
+  font-weight: 900;
+  margin-right: .8rem;
+  -webkit-transition: color 280ms, background 280ms;
+  transition: color 280ms, background 280ms;
+}
+
+.section .formPanel .sendBtn {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: 42px;
+  border: 2px solid var(--button-border-color);
+  background: transparent;
+  font-size: 16px;
+  letter-spacing: .06rem;
+  margin: 0;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  -webkit-transition: border-color 280ms, color 280ms, background 280ms;
+  transition: border-color 280ms, color 280ms, background 280ms;
+}
+
+.section .formPanel .orangeBtn:hover {
+  background: var(--light-orange-color);
+  color: var(--primary-background-color);
+  border-color: transparent;
+}
+
+.section .formPanel img {
+  width: 38px;
+}
+
+.section .formPanel .icoName {
+  -webkit-filter: var(--nameFilter);
+          filter: var(--nameFilter);
+}
+
+.section .formPanel .icoEmail {
+  -webkit-filter: var(--emailFilter);
+          filter: var(--emailFilter);
+}
+
+.section .formPanel .icoMsg {
+  -webkit-filter: var(--msgFilter);
+          filter: var(--msgFilter);
+}
+
+.section .formPanel input, .section .formPanel textarea {
+  outline: 0;
+  border: 2px solid var(--button-border-color);
+  background: transparent;
+  width: 262px;
+  height: 42px;
+  margin-left: 2rem;
+  font-size: 1.2rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
+
+.section .formPanel input::-webkit-input-placeholder {
+  color: var(--disabled-ico-color);
+}
+
+.section .formPanel input:-ms-input-placeholder {
+  color: var(--disabled-ico-color);
+}
+
+.section .formPanel input::-ms-input-placeholder {
+  color: var(--disabled-ico-color);
+}
+
+.section .formPanel input::placeholder {
+  color: var(--disabled-ico-color);
+}
+
+.section .formPanel input:focus {
+  border-color: var(--disabled-ico-color);
+}
+
+.section .formPanel .inputName {
+  color: var(--light-pink-color);
+}
+
+.section .formPanel .inputEmail {
+  color: var(--light-purple-color);
+}
+
+.section .formPanel .inputMessage {
+  color: var(--light-green-color);
 }
 
 .section .formPanel .formCard {
@@ -574,104 +673,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.section .formPanel .formCard img {
-  width: 38px;
-}
-
-.section .formPanel .formCard .icoName {
-  -webkit-filter: var(--nameFilter);
-          filter: var(--nameFilter);
-}
-
-.section .formPanel .formCard .icoEmail {
-  -webkit-filter: var(--emailFilter);
-          filter: var(--emailFilter);
-}
-
-.section .formPanel .formCard .icoMsg {
-  -webkit-filter: var(--msgFilter);
-          filter: var(--msgFilter);
-}
-
-.section .formPanel .formCard input, .section .formPanel .formCard textarea {
-  outline: 0;
-  border: 2px solid var(--button-border-color);
-  background: transparent;
-  width: 262px;
-  height: 42px;
-  margin-left: 2rem;
-  font-size: 1.2rem;
-  padding-left: .5rem;
-  padding-right: .5rem;
-}
-
-.section .formPanel .formCard input::-webkit-input-placeholder {
-  color: var(--disabled-ico-color);
-}
-
-.section .formPanel .formCard input:-ms-input-placeholder {
-  color: var(--disabled-ico-color);
-}
-
-.section .formPanel .formCard input::-ms-input-placeholder {
-  color: var(--disabled-ico-color);
-}
-
-.section .formPanel .formCard input::placeholder {
-  color: var(--disabled-ico-color);
-}
-
-.section .formPanel .formCard input:focus {
-  border-color: var(--disabled-ico-color);
-}
-
-.section .formPanel .formCard .inputName {
-  color: var(--light-pink-color);
-}
-
-.section .formPanel .formCard .inputEmail {
-  color: var(--light-purple-color);
-}
-
-.section .formPanel .formCard .inputMessage {
-  color: var(--light-green-color);
-}
-
-.section .formPanel .formCard button {
-  height: 2rem;
-  width: 35%;
-  border-radius: 0px;
-  background: var(--button-bg-color);
-  border: 0;
-  font-family: Steradian;
-  font-weight: 900;
-  margin-right: .8rem;
-  -webkit-transition: color 280ms, background 280ms;
-  transition: color 280ms, background 280ms;
-}
-
-.section .formPanel .formCard .sendBtn {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  height: 42px;
-  border: 2px solid var(--button-border-color);
-  background: transparent;
-  font-size: 16px;
-  letter-spacing: .06rem;
-  margin: 0;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  -webkit-transition: border-color 280ms, color 280ms, background 280ms;
-  transition: border-color 280ms, color 280ms, background 280ms;
-}
-
-.section .formPanel .formCard .orangeBtn:hover {
-  background: var(--light-orange-color);
-  color: var(--primary-background-color);
-  border-color: transparent;
 }
 
 .cardContainer {
@@ -925,6 +926,81 @@ body {
 .kustom {
   -webkit-transform: translateX(-65px);
           transform: translateX(-65px);
+}
+
+.rm {
+  display: none;
+}
+
+.feedBackPanel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--secondary-background-color);
+  z-index: 1;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity 280ms;
+  transition: opacity 280ms;
+}
+
+.feedBackPanel .statusIco {
+  height: 40% !important;
+  width: auto !important;
+}
+
+.feedBackPanel .statusOk {
+  -webkit-filter: invert(77%) sepia(5%) saturate(4648%) hue-rotate(86deg) brightness(118%) contrast(100%);
+          filter: invert(77%) sepia(5%) saturate(4648%) hue-rotate(86deg) brightness(118%) contrast(100%);
+}
+
+.feedBackPanel .statusError {
+  -webkit-filter: invert(70%) sepia(82%) saturate(2839%) hue-rotate(319deg) brightness(103%) contrast(109%);
+          filter: invert(70%) sepia(82%) saturate(2839%) hue-rotate(319deg) brightness(103%) contrast(109%);
+}
+
+.feedBackPanel .statusText {
+  background: transparent;
+  font-family: 'avenir';
+  letter-spacing: 1px;
+  color: var(--basic-text-color);
+  font-size: 1.2rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.feedBackPanel .statusButton {
+  height: 2rem;
+  border-radius: 0px;
+  background: var(--button-bg-color);
+  border: 0;
+  font-family: Steradian;
+  font-weight: 900;
+  margin-right: .8rem;
+  -webkit-transition: color 280ms, background 280ms, border-color 280ms;
+  transition: color 280ms, background 280ms, border-color 280ms;
+  letter-spacing: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 @media (min-width: 1480px) {

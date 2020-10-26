@@ -443,6 +443,7 @@ body{
     }
 
     .formPanel{
+        position: relative;
         margin-top: 2rem;
         margin-left: 2rem;
         //height: 412px;
@@ -452,6 +453,78 @@ body{
         display: flex;
         flex-direction: column;
         padding: 3rem;
+        button{
+            height: 2rem;
+            width: 35%;
+            border-radius: 0px;
+            background: var(--button-bg-color);
+            border: 0;
+            //border: 2px solid #637183;
+            font-family: Steradian;
+            font-weight: 900;
+            margin-right: .8rem;
+            transition: color 280ms, background 280ms;
+        }
+        .sendBtn{
+            width: max-content;
+            height: 42px;
+            border: 2px solid var(--button-border-color);
+            background: transparent;
+            font-size: 16px;
+            letter-spacing: .06rem;
+            margin: 0;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            transition: border-color 280ms, color 280ms, background 280ms;
+            //padding: 0;
+        }
+        .orangeBtn:hover{
+            background: var(--light-orange-color);
+            color: var(--primary-background-color);
+            border-color: transparent;
+        }
+        img{
+            width: 38px;
+        }
+
+        .icoName{
+            filter: var(--nameFilter);
+        }
+        .icoEmail{
+            filter: var(--emailFilter);
+        }
+        .icoMsg{
+            filter: var(--msgFilter);
+        }
+
+        input, textarea{
+            outline: 0;
+            border: 2px solid var(--button-border-color);
+            background: transparent;
+            width: 262px;
+            height: 42px;
+            margin-left: 2rem;
+            
+            
+            font-size: 1.2rem;
+            padding-left: .5rem;
+            padding-right: .5rem;
+        }
+        input::placeholder{
+            color: var(--disabled-ico-color);
+        }
+        input:focus{
+            border-color: var(--disabled-ico-color);
+        }
+        .inputName{
+            color: var(--light-pink-color);
+        }
+        .inputEmail{
+            color: var(--light-purple-color);
+        }
+        .inputMessage{
+            color: var(--light-green-color);
+        }
         .formCard{
             width: auto;
             //width: 100%;
@@ -462,80 +535,6 @@ body{
             flex-direction: row;
             justify-content: start;
             align-items: center;
-            img{
-                width: 38px;
-            }
-
-            .icoName{
-                filter: var(--nameFilter);
-            }
-            .icoEmail{
-                filter: var(--emailFilter);
-            }
-            .icoMsg{
-                filter: var(--msgFilter);
-            }
-
-            input, textarea{
-                outline: 0;
-                border: 2px solid var(--button-border-color);
-                background: transparent;
-                width: 262px;
-                height: 42px;
-                margin-left: 2rem;
-                
-                
-                font-size: 1.2rem;
-                padding-left: .5rem;
-                padding-right: .5rem;
-            }
-            input::placeholder{
-                color: var(--disabled-ico-color);
-            }
-            input:focus{
-                border-color: var(--disabled-ico-color);
-            }
-            .inputName{
-                color: var(--light-pink-color);
-            }
-            .inputEmail{
-                color: var(--light-purple-color);
-            }
-            .inputMessage{
-                color: var(--light-green-color);
-            }
-
-            button{
-                height: 2rem;
-                width: 35%;
-                border-radius: 0px;
-                background: var(--button-bg-color);
-                border: 0;
-                //border: 2px solid #637183;
-                font-family: Steradian;
-                font-weight: 900;
-                margin-right: .8rem;
-                transition: color 280ms, background 280ms;
-            }
-
-            .sendBtn{
-                width: max-content;
-                height: 42px;
-                border: 2px solid var(--button-border-color);
-                background: transparent;
-                font-size: 16px;
-                letter-spacing: .06rem;
-                margin: 0;
-                padding-left: 1.5rem;
-                padding-right: 1.5rem;
-                transition: border-color 280ms, color 280ms, background 280ms;
-                //padding: 0;
-            }
-            .orangeBtn:hover{
-                background: var(--light-orange-color);
-                color: var(--primary-background-color);
-                border-color: transparent;
-            }
         }
     }
 }
@@ -724,6 +723,64 @@ body{
 .kustom{
     transform: translateX(-65px);
 }
+.rm{
+    display: none;
+}
+.feedBackPanel{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--secondary-background-color);
+    z-index: 1;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    //display: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 280ms;
+
+    .statusIco{
+        height: 40% !important;
+        width: auto !important;
+    }
+    .statusOk{
+        filter: invert(77%) sepia(5%) saturate(4648%) hue-rotate(86deg) brightness(118%) contrast(100%);
+    }
+    .statusError{
+        filter: invert(70%) sepia(82%) saturate(2839%) hue-rotate(319deg) brightness(103%) contrast(109%);
+    }
+    .statusText{
+        background: transparent;
+        font-family: 'avenir';
+        letter-spacing: 1px;
+        color: var(--basic-text-color);
+        font-size: 1.2rem;
+        padding-left: .5rem;
+        padding-right: .5rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    .statusButton{
+        height: 2rem;
+        border-radius: 0px;
+        background: var(--button-bg-color);
+        border: 0;
+        font-family: Steradian;
+        font-weight: 900;
+        margin-right: .8rem;
+        transition: color 280ms, background 280ms, border-color 280ms;
+        letter-spacing: 1px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
 
 
 
@@ -854,7 +911,6 @@ body{
         .formPanel{
             margin-top: 1rem;
             margin-left: 0rem;
-            
             width: 85%;
             border-radius: 6px;
             display: flex;

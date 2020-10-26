@@ -10,9 +10,13 @@ amerForm.addEventListener('submit', (e)=>{
     .then((res)=>{
         if(res.status == 200){
             showStatus(true);
+        }else{
+            showStatus(false);
         }
+        return;
     }).catch((err)=>{
         showStatus(false);
+        return;
     })
     
 })
@@ -45,12 +49,14 @@ function showStatus(res){
     }
     mainPanel.style.opacity = 100;
     mainPanel.style.pointerEvents = 'visible'
+    return;
 }
 
 function hideStatus(){
     const mainPanel = document.getElementById('feedBackPnl')
     mainPanel.style.opacity = 0;
     mainPanel.style.pointerEvents = 'none'
+    return;
 }
 
 

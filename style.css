@@ -37,6 +37,28 @@
   }
 }
 
+@-webkit-keyframes loadingAnima {
+  50% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes loadingAnima {
+  50% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
 :root {
   --primary-background-color: #232931;
   --secondary-background-color: #292F39;
@@ -929,7 +951,7 @@ body {
 }
 
 .rm {
-  display: none;
+  display: none !important;
 }
 
 .feedBackPanel {
@@ -964,6 +986,35 @@ body {
 .feedBackPanel .statusIco {
   height: 40% !important;
   width: auto !important;
+}
+
+.feedBackPanel .loading {
+  background: var(--button-border-color);
+  height: 30%;
+  width: 30%;
+  -webkit-clip-path: circle();
+          clip-path: circle();
+  -webkit-animation: loadingAnima 2000ms cubic-bezier(0.52, -0.09, 0.57, 0.95) infinite;
+          animation: loadingAnima 2000ms cubic-bezier(0.52, -0.09, 0.57, 0.95) infinite;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.feedBackPanel .loading .subLoading {
+  height: 50%;
+  width: 50%;
+  -webkit-clip-path: inherit;
+          clip-path: inherit;
+  background: var(--disabled-ico-color);
+  -webkit-animation: loadingAnima 2000ms 500ms cubic-bezier(0.52, -0.09, 0.57, 0.95) infinite;
+          animation: loadingAnima 2000ms 500ms cubic-bezier(0.52, -0.09, 0.57, 0.95) infinite;
 }
 
 .feedBackPanel .statusOk {

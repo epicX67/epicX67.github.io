@@ -223,8 +223,11 @@
             <div id="feedBackPnl" class="feedBackPanel">
                 <img id="sIcoOk" class="statusIco statusOk rm" src="res/images/statusOk.svg" alt="">
                 <img id="sIcoErr" class="statusIco statusError rm" src="res/images/statusError.svg" alt="">
-                <p id="sText" class="statusText">Successful</p>
-                <button type="button" id="sBtn" onclick="hideStatus()" class="sendBtn orangeColor orangeBtn">Ok</button>
+                <div id="loading" class="loading rm">
+                    <div class="subLoading"></div>
+                </div>
+                <p id="sText" class="statusText rm">Successful</p>
+                <button type="button" id="sBtn" onclick="hideStatus()" class="sendBtn orangeColor orangeBtn rm">Ok</button>
             </div>
             <label class="formCard">
                 <img class="icoName" src="res/images/signature-solid.svg" alt="">

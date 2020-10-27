@@ -2,9 +2,24 @@ var dark=true;
 
 //Form
 const amerForm = document.getElementById('amerForm')
-amerForm.addEventListener('submit', (e)=>{
-    console.log('calling')
+amerForm.addEventListener('submit', async(e)=>{
     e.preventDefault()
+
+    const mainPanel = document.getElementById('feedBackPnl')
+    mainPanel.style.opacity = 100;
+    const loading = document.getElementById('loading')
+    if(loading.classList.contains('rm')){
+        loading.classList.remove('rm')
+    }
+    const stext = document.getElementById('sText')
+    if(stext.classList.contains('rm')){
+        stext.classList.remove('rm')
+    }
+    stext.innerHTML = "Please wait"
+
+    await sleep(200)
+
+
     const amerData = new URLSearchParams(new FormData(amerForm))
     fetch('https://portfoliofeedback69.herokuapp.com/send', {method: 'post', body: amerData, mode: 'cors'})
     .then((res)=>{
@@ -26,6 +41,13 @@ function showStatus(res){
     const stext = document.getElementById('sText')
     const sBtn = document.getElementById('sBtn')
     const mainPanel = document.getElementById('feedBackPnl')
+
+    const loading = document.getElementById('loading')
+    if(!loading.classList.contains('rm')){
+        console.log("None")
+        //loading.style['display'] = 'none'
+        loading.classList.add('rm')
+    }
     
     if(res){
         if(okIco.classList.contains('rm')){
@@ -53,8 +75,28 @@ function showStatus(res){
 
 function hideStatus(){
     const mainPanel = document.getElementById('feedBackPnl')
+    const okIco = document.getElementById('sIcoOk')
+    const errorIco = document.getElementById('sIcoErr')
+    const stext = document.getElementById('sText')
+    const sBtn = document.getElementById('sBtn')
     mainPanel.style.opacity = 0;
     mainPanel.style.pointerEvents = 'none'
+    
+    if(!okIco.classList.contains('rm')){
+        okIco.classList.add('rm')
+    }
+
+    if(!errorIco.classList.contains('rm')){
+        errorIco.classList.add('rm')
+    }
+
+    if(!stext.classList.contains('rm')){
+        stext.classList.add('rm')
+    }
+
+    if(!sBtn.classList.contains('rm')){
+        sBtn.classList.add('rm')
+    }
     return;
 }
 

@@ -22,6 +22,15 @@
     }
 }
 
+@keyframes loadingAnima{
+    50%{
+        transform: scale(.5);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
 :root{
     --primary-background-color: #232931;
     --secondary-background-color: #292F39;
@@ -724,7 +733,7 @@ body{
     transform: translateX(-65px);
 }
 .rm{
-    display: none;
+    display: none !important;
 }
 .feedBackPanel{
     position: absolute;
@@ -749,6 +758,23 @@ body{
     .statusIco{
         height: 40% !important;
         width: auto !important;
+    }
+    .loading{
+        background: var(--button-border-color);
+        height: 30%;
+        width: 30%;
+        clip-path: circle();
+        animation: loadingAnima 2000ms cubic-bezier(0.52, -0.09, 0.57, 0.95) infinite;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .subLoading{
+            height: 50%;
+            width: 50%;
+            clip-path: inherit;
+            background: var(--disabled-ico-color);
+            animation: loadingAnima 2000ms 500ms cubic-bezier(0.52, -0.09, 0.57, 0.95) infinite;
+        }
     }
     .statusOk{
         filter: invert(77%) sepia(5%) saturate(4648%) hue-rotate(86deg) brightness(118%) contrast(100%);

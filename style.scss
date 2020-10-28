@@ -732,7 +732,7 @@ body{
 .kustom{
     transform: translateX(-65px);
 }
-.rm{
+.hide{
     display: none !important;
 }
 .feedBackPanel{
@@ -792,6 +792,7 @@ body{
         padding-right: .5rem;
         margin-top: 2rem;
         margin-bottom: 2rem;
+        text-align: center;
     }
     .statusButton{
         height: 2rem;

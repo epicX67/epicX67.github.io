@@ -221,25 +221,25 @@
 
         <form action="https://portfoliofeedback69.herokuapp.com/send" id="amerForm" class="formPanel" method="POST">
             <div id="feedBackPnl" class="feedBackPanel">
-                <img id="sIcoOk" class="statusIco statusOk rm" src="res/images/statusOk.svg" alt="">
-                <img id="sIcoErr" class="statusIco statusError rm" src="res/images/statusError.svg" alt="">
-                <div id="loading" class="loading rm">
+                <img id="sIcoOk" class="statusIco statusOk hide" src="res/images/statusOk.svg" alt="">
+                <img id="sIcoErr" class="statusIco statusError hide" src="res/images/statusError.svg" alt="">
+                <div id="loading" class="loading hide">
                     <div class="subLoading"></div>
                 </div>
-                <p id="sText" class="statusText rm">Successful</p>
-                <button type="button" id="sBtn" onclick="hideStatus()" class="sendBtn orangeColor orangeBtn rm">Ok</button>
+                <p id="sText" class="statusText hide">Successful</p>
+                <button type="button" id="sBtn" onclick="hideStatus()" class="sendBtn orangeColor orangeBtn hide">Ok</button>
             </div>
             <label class="formCard">
                 <img class="icoName" src="res/images/signature-solid.svg" alt="">
-                <input name="name" class="inputName" type="text" placeholder="Name" required>
+                <input id="fName" name="name" class="inputName" type="text" placeholder="Name" required>
             </label>
             <label class="formCard">
                 <img class="icoEmail" src="res/images/at-solid.svg" alt="">
-                <input name="email" class="inputEmail" type="email" placeholder="Email">
+                <input id="fEmail" name="email" class="inputEmail" type="email" placeholder="Email">
             </label>
             <label class="formCard">
                 <img class="icoMsg" src="res/images/keyboard-solid.svg" alt="">
-                <input name="message" class="inputMessage" type="text" placeholder="Your message" required>
+                <input id="fMessage" name="message" class="inputMessage" type="text" placeholder="Your message" required>
             </label>
             <div class="formCard" style="justify-content: flex-end; margin-bottom: 0;">
                 <button type="submit" class="sendBtn orangeColor orangeBtn">Send</button>

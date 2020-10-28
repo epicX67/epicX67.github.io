@@ -8,12 +8,12 @@ amerForm.addEventListener('submit', async(e)=>{
     const mainPanel = document.getElementById('feedBackPnl')
     mainPanel.style.opacity = 100;
     const loading = document.getElementById('loading')
-    if(loading.classList.contains('rm')){
-        loading.classList.remove('rm')
+    if(loading.classList.contains('hide')){
+        loading.classList.remove('hide')
     }
     const stext = document.getElementById('sText')
-    if(stext.classList.contains('rm')){
-        stext.classList.remove('rm')
+    if(stext.classList.contains('hide')){
+        stext.classList.remove('hide')
     }
     stext.innerHTML = "Please wait"
 
@@ -43,29 +43,38 @@ function showStatus(res){
     const mainPanel = document.getElementById('feedBackPnl')
 
     const loading = document.getElementById('loading')
-    if(!loading.classList.contains('rm')){
+    if(!loading.classList.contains('hide')){
         console.log("None")
         //loading.style['display'] = 'none'
-        loading.classList.add('rm')
+        loading.classList.add('hide')
     }
     
     if(res){
-        if(okIco.classList.contains('rm')){
-            okIco.classList.remove('rm')
+        if(okIco.classList.contains('hide')){
+            okIco.classList.remove('hide')
         }
-        if(!errorIco.classList.contains('rm')){
-            errorIco.classList.add('rm')
+        if(!errorIco.classList.contains('hide')){
+            errorIco.classList.add('hide')
         }
         stext.innerHTML = "Thank you for contacting with me"
+
+
+        if(sBtn.classList.contains('hide')){
+            sBtn.classList.remove('hide')
+        }
         sBtn.innerHTML = "Close"
     }else{
-        if(errorIco.classList.contains('rm')){
-            errorIco.classList.remove('rm')
+        if(errorIco.classList.contains('hide')){
+            errorIco.classList.remove('hide')
         }
-        if(!okIco.classList.contains('rm')){
-            okIco.classList.add('rm')
+        if(!okIco.classList.contains('hide')){
+            okIco.classList.add('hide')
         }
         stext.innerHTML = "Something went wrong"
+
+        if(sBtn.classList.contains('hide')){
+            sBtn.classList.remove('hide')
+        }
         sBtn.innerHTML = "Try Again"
     }
     mainPanel.style.opacity = 100;
@@ -82,21 +91,26 @@ function hideStatus(){
     mainPanel.style.opacity = 0;
     mainPanel.style.pointerEvents = 'none'
     
-    if(!okIco.classList.contains('rm')){
-        okIco.classList.add('rm')
+    if(!okIco.classList.contains('hide')){
+        okIco.classList.add('hide')
     }
 
-    if(!errorIco.classList.contains('rm')){
-        errorIco.classList.add('rm')
+    if(!errorIco.classList.contains('hide')){
+        errorIco.classList.add('hide')
     }
 
-    if(!stext.classList.contains('rm')){
-        stext.classList.add('rm')
+    if(!stext.classList.contains('hide')){
+        stext.classList.add('hide')
     }
 
-    if(!sBtn.classList.contains('rm')){
-        sBtn.classList.add('rm')
+    if(!sBtn.classList.contains('hide')){
+        sBtn.classList.add('hide')
     }
+
+    //Removing data from Form
+    document.getElementById('fName').innerText = ''
+    document.getElementById('fEmail').innerText = ''
+    document.getElementById('fMessage').innerText = ''
     return;
 }
 

@@ -382,7 +382,7 @@ async function fetchAll(url, repoName, downloadObj){
     let x = await fetch(url)
     let values = await x.json()
     for (let i = 0; i < values.length; i++) {
-        if (values[i].commit.author.email == myEmail || values[i].commit.author.name == username || data[i].commit.author.email == orgName) {
+        if (values[i].commit.author.email == myEmail || values[i].commit.author.name == username || values[i].commit.author.email == orgName) {
             const value = {
                 "repoName": repoName,
                 "msg": values[i].commit.message,

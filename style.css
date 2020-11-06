@@ -66,7 +66,7 @@
   --enabled-ico-color: #BDF3FF;
   --accent-color: #4ECCA3;
   --primary-text-color: #BBEBFF;
-  --basic-text-color: #E3E3E3;
+  --basic-text-color: #f1f1f1;
   --button-bg-color: #323B49;
   --button-border-color: #2E3746;
   --nameFilter: invert(71%) sepia(31%) saturate(579%) hue-rotate(292deg) brightness(114%) contrast(106%);
@@ -695,6 +695,185 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.section .msgSectionEx {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
+
+.section .msgSectionEx button {
+  height: 2rem;
+  border-radius: 0px;
+  background: var(--button-bg-color);
+  border: 0;
+  font-family: Steradian;
+  font-weight: 900;
+  margin-right: .8rem;
+  -webkit-transition: color 280ms, background 280ms, border-color 280ms;
+  transition: color 280ms, background 280ms, border-color 280ms;
+  letter-spacing: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+.section .msgSectionEx .greenBtn:hover {
+  background: var(--light-green-color);
+  color: var(--primary-background-color);
+  border-color: transparent;
+}
+
+.section .msgSectionEx .redBtn:hover {
+  background: var(--light-red-color);
+  color: var(--primary-background-color);
+  border-color: transparent;
+}
+
+.section .msgSectionEx .blueBtn:hover {
+  background: var(--light-blue-color);
+  color: var(--primary-background-color);
+  border-color: transparent;
+}
+
+.section .msgContainer {
+  position: relative;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  width: 400px;
+  border-radius: 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.section .msgContainer .msgCard {
+  background: var(--secondary-background-color);
+  margin-bottom: 1rem;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.section .msgContainer .msgCard .topSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: .5rem;
+}
+
+.section .msgContainer .msgCard .topSection .msgSender {
+  font-size: 14px;
+  margin-top: 1rem;
+  font-family: 'Steradian';
+  letter-spacing: .05rem;
+  word-wrap: break-word;
+  text-align: left;
+}
+
+.section .msgContainer .msgCard .topSection .msgTime {
+  margin-top: .5rem;
+  font-family: 'Steradian';
+  letter-spacing: .05rem;
+  line-height: 1.3rem;
+  font-size: .9rem;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  text-align: right;
+}
+
+.section .msgContainer .msgCard .msgSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.section .msgContainer .msgCard .msgSection .msges, .section .msgContainer .msgCard .msgSection .senderName {
+  margin-top: .5rem;
+  font-family: 'avenir';
+  letter-spacing: 1px;
+  line-height: 1.58rem;
+  font-size: .9rem;
+}
+
+.section .msgContainer .msgCard .msgSection .senderName {
+  font-size: 1.2rem;
+}
+
+.section .msgContainer .msgCard .bottomSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.section .msgContainer .msgCard .bottomSection button {
+  text-decoration: none;
+  font-family: 'Steradian';
+  letter-spacing: .08rem;
+  line-height: 1.3rem;
+  font-size: .8rem;
+  padding: .3rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  background: var(--button-bg-color);
+  margin-top: 1rem;
+  margin-left: 1rem;
+  text-align: center;
+  border: 2px solid var(--button-border-color);
+  background: transparent;
+  -webkit-transition: color 280ms, background 280ms, border-color 280ms;
+  transition: color 280ms, background 280ms, border-color 280ms;
+  cursor: pointer;
+  color: var(--light-red-color);
+}
+
+.section .msgContainer .msgCard .bottomSection button:hover {
+  border-color: transparent;
+  background: var(--light-red-color);
+  color: var(--button-bg-color);
 }
 
 .cardContainer {

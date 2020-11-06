@@ -216,8 +216,9 @@
 
     <section id="email" class="section" style="display: none; opacity: 0%; max-width: 1000px;">
         <div class="upspacing"></div>
-        <p class="title sideSpacing orangeColor">Contact</p>
-        <p class="info sideSpacing">Leave your message here if you have one :p </p>
+        <p id="contactHead" class="title sideSpacing orangeColor">Contact</p>
+        <p id="contactMsg" class="info sideSpacing">Leave your message here if you have one :p </p>
+        
 
         <form action="https://portfoliofeedback69.herokuapp.com/send" id="amerForm" class="formPanel" method="POST">
             <div id="feedBackPnl" class="feedBackPanel">
@@ -245,6 +246,26 @@
                 <button type="submit" class="sendBtn orangeColor orangeBtn">Send</button>
             </div>
         </form>
+        <div id="msgSectionEx" class="msgSectionEx" style="display: none;">
+            <button class="msgOptionBtn greenBtn greenColor" onclick="showForm()">Back</button>
+            <button class="msgOptionBtn blueBtn blueColor" onclick="showMsgPanel()">Refresh</button>
+            <button class="msgOptionBtn redBtn redColor" onclick="deleteAllMsg()">Delete All</button>
+        </div>
+        <div id="msgContainer" class="msgContainer">
+            <!--div class="msgCard">
+                <div class="topSection">
+                    <div class="msgSender">souravgain605@gmail.com</div>
+                    <div class="msgTime">11:00AM</div>
+                </div>
+                <div class="msgSection">
+                    <div class="senderName">Sourav Gain,</div>
+                    <div class="msges">Hello world</div>
+                </div>
+                <div class="bottomSection">
+                    <button>Delete</button>
+                </div>
+            </div-->
+        </div>
     </section>
 </body>
 </html>

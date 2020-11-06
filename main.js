@@ -1,7 +1,11 @@
 var dark=true;
-
+var access = null;
 //Form
+const mainRoute = 'https://portfoliofeedback69.herokuapp.com';
+//const localRoute = 'http://localhost:3000';
 const amerForm = document.getElementById('amerForm')
+const amerMsges = document.getElementById('msgContainer')
+const amerMsgBtns = document.getElementById('msgSectionEx')
 amerForm.addEventListener('submit', async(e)=>{
     e.preventDefault()
 
@@ -21,10 +25,33 @@ amerForm.addEventListener('submit', async(e)=>{
 
 
     const amerData = new URLSearchParams(new FormData(amerForm))
-    fetch('https://portfoliofeedback69.herokuapp.com/send', {method: 'post', body: amerData, mode: 'cors'})
+    fetch(mainRoute + '/send', {method: 'post', body: amerData, mode: 'cors'})
     .then((res)=>{
         if(res.status == 200){
-            showStatus(true);
+            
+            res.json()
+            .then(
+                data => {
+                    window.access = data.access
+                    hideStatus()
+                    hideForm()
+                    showMsgPanel()
+                    return;
+                }
+
+            )
+            .catch(
+                err => window.access = null
+            )
+            
+            if(window.access != null){
+                hideStatus()
+                hideForm()
+                showMsgPanel()
+            }else{
+                showStatus(true);
+                
+            }
         }else{
             showStatus(false);
         }
@@ -156,7 +183,7 @@ function switchMode(){
         document.documentElement.style.setProperty("--button-bg-color" , "#323B49");
         document.documentElement.style.setProperty("--button-border-color" , "#2E3746");
 
-        document.documentElement.style.setProperty("--basic-text-color" , "#E3E3E3");
+        document.documentElement.style.setProperty("--basic-text-color" , "#f1f1f1");
         document.documentElement.style.setProperty("--disabled-ico-color" , "#637183");
 
         document.documentElement.style.setProperty("--light-blue-color" , "#BDF3FF");
@@ -546,4 +573,130 @@ function getTime(T){
 
     //Year month date
     //Hour mint sec
+}
+
+
+
+
+
+
+
+//
+function hideForm(){
+    amerForm.style['display']='none';
+    amerMsges.style['display'] = 'flex';
+    amerMsgBtns.style['display'] = 'flex';
+    
+    document.getElementById('contactHead').innerHTML = 'Feedbacks'
+    document.getElementById('contactMsg').innerHTML = 'These are the feedbacks which you recived from other user.'
+}
+function showForm(){
+    amerForm.style['display']='flex';
+    amerMsges.style['display'] = 'none';
+    amerMsgBtns.style['display'] = 'none';
+    document.getElementById('contactHead').innerHTML = 'Contact'
+    document.getElementById('contactMsg').innerHTML = 'Leave your message here if you have one :p'
+    window.access = null;
+}
+
+function showMsgPanel(){
+    fetch(mainRoute + '/messages', {headers:{'Accept' : 'application/json', 'Content-Type' : 'application/json'},method: 'post',body: JSON.stringify({"password" : window.access}), mode: 'cors'}).then(
+        res =>res.json()
+    ).then(
+        (alldata) => {
+            amerMsges.innerHTML='';
+            if(alldata.length < 1){
+                document.getElementById('contactMsg').innerHTML = 'Looks like you didnt recived any messages yet :('
+                return;
+            }
+            for(let i = alldata.length - 1; i >= 0; i--){
+                amerMsges.appendChild(createMsgCard(i,{
+                    id: alldata[i]._id,
+                    name: alldata[i].name,
+                    email: alldata[i].email,
+                    time: alldata[i].createdAt,
+                    message: alldata[i].message
+                }))
+            }
+        }
+        
+    )
+}
+
+
+function createMsgCard(elementNo,data){
+    var mainDiv = document.createElement("div")
+    mainDiv.classList.add('msgCard')
+    mainDiv.setAttribute('id', `msgCard${elementNo}`);
+
+    //Top Section
+    var topSection = document.createElement('div')
+    topSection.classList.add('topSection')
+
+    var msgSender = document.createElement('div')
+    msgSender.classList.add('msgSender')
+    msgSender.innerText = data.email;
+
+    var msgTime = document.createElement('div')
+    msgTime.classList.add('msgTime')
+    msgTime.innerText = getTime(getTimeObj(data.time));
+
+    topSection.appendChild(msgSender)
+    topSection.appendChild(msgTime)
+
+    //MsgSection
+    var msgSection = document.createElement('div')
+    msgSection.classList.add('msgSection')
+
+    var senderName = document.createElement('div')
+    senderName.classList.add('senderName')
+    senderName.innerText = `${data.name},`
+
+    var msges = document.createElement('div')
+    msges.classList.add('msges')
+    msges.innerText = data.message
+
+    msgSection.appendChild(senderName)
+    msgSection.appendChild(msges)
+
+    //Bottom Section
+    var bottomSection = document.createElement('div')
+    bottomSection.classList.add('bottomSection')
+    var deleteBtn = document.createElement('button')
+    deleteBtn.innerText = 'Delete'
+    deleteBtn.setAttribute('onclick', `deleteMsg('msgCard${elementNo}','${data.id}')`)
+    
+    bottomSection.appendChild(deleteBtn)
+
+    //Apending to main div
+    mainDiv.appendChild(topSection)
+    mainDiv.appendChild(msgSection)
+    mainDiv.appendChild(bottomSection)
+
+    return mainDiv;
+
+}
+
+
+function deleteMsg(elementId, msgId){
+    fetch(mainRoute + '/messages/delete', {headers:{'Accept' : 'application/json', 'Content-Type' : 'application/json'},method: 'delete',body: JSON.stringify({"password" : window.access, "id": msgId}), mode: 'cors'}).then(
+        res =>{
+            if(res.status == 200){
+                deleteMsgElement(elementId)
+            }
+        }
+    )
+}
+function deleteAllMsg(){
+    fetch(mainRoute + '/messages/deleteAll', {headers:{'Accept' : 'application/json', 'Content-Type' : 'application/json'},method: 'delete',body: JSON.stringify({"password" : window.access}), mode: 'cors'}).then(
+        res =>{
+            if(res.status == 200){
+                amerMsges.innerHTML=''
+                showForm()
+            }
+        }
+    )
+}
+function deleteMsgElement(elementId){
+    document.getElementById(elementId).remove()
 }

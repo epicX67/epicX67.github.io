@@ -42,7 +42,7 @@
     --enabled-ico-color: #BDF3FF;
     --accent-color: #4ECCA3;
     --primary-text-color: #BBEBFF;
-    --basic-text-color: #E3E3E3;
+    --basic-text-color: #f1f1f1;
 
     --button-bg-color: #323B49;
     --button-border-color: #2E3746;
@@ -544,6 +544,134 @@ body{
             flex-direction: row;
             justify-content: start;
             align-items: center;
+        }
+    }
+    
+    .msgSectionEx{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        margin-top: 2rem;
+        margin-left: 2rem;
+        button{
+            height: 2rem;
+            border-radius: 0px;
+            background: var(--button-bg-color);
+            border: 0;
+            font-family: Steradian;
+            font-weight: 900;
+            margin-right: .8rem;
+            -webkit-transition: color 280ms, background 280ms, border-color 280ms;
+            transition: color 280ms, background 280ms, border-color 280ms;
+            letter-spacing: 1px;
+            padding-left: 10px;
+            padding-right: 10px;
+            cursor: pointer;
+        }
+        .greenBtn:hover{
+            background: var(--light-green-color);
+            color: var(--primary-background-color);
+            border-color: transparent;
+        }
+        .redBtn:hover{
+            background: var(--light-red-color);
+            color: var(--primary-background-color);
+            border-color: transparent;
+        }
+        .blueBtn:hover{
+            background: var(--light-blue-color);
+            color: var(--primary-background-color);
+            border-color: transparent;
+        }
+    }
+    .msgContainer{
+        position: relative;
+        margin-top: 2rem;
+        margin-left: 2rem;
+        //height: 412px;
+        width: 400px;
+        border-radius: 6px;
+        display: flex;
+        flex-direction: column;
+        //padding: 3rem;
+        .msgCard{
+            //height: 100px;
+            background: var(--secondary-background-color);
+            margin-bottom: 1rem;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+
+            .topSection{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+                margin-bottom: .5rem;
+                .msgSender{
+                    font-size: 14px;
+                    margin-top: 1rem;
+                    font-family: 'Steradian';
+                    letter-spacing: .05rem;
+                    word-wrap: break-word;
+                    text-align: left;
+                }
+                .msgTime{
+                    margin-top: .5rem;
+                    font-family: 'Steradian';
+                    letter-spacing: .05rem;
+                    line-height: 1.3rem;
+                    font-size: .9rem;
+                    transform: translateY(-10px);
+                    text-align: right;
+                }
+            }
+            .msgSection{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                .msges, .senderName{
+                    margin-top: .5rem;
+                    font-family: 'avenir';
+                    letter-spacing: 1px;
+                    line-height: 1.58rem;
+                    font-size: .9rem;
+                }
+                .senderName{
+                    font-size: 1.2rem;
+                }
+            }
+
+            .bottomSection{
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                button{
+                    text-decoration: none;
+                    font-family: 'Steradian';
+                    letter-spacing: .08rem;
+                    line-height: 1.3rem;
+                    font-size: .8rem;
+                    padding: .3rem;
+                    padding-left: 1.5rem;
+                    padding-right: 1.5rem;
+                    background: var(--button-bg-color);
+                    margin-top: 1rem;
+                    margin-left: 1rem;
+                    text-align: center;
+                    border: 2px solid var(--button-border-color);
+                    background: transparent;
+                    -webkit-transition: color 280ms, background 280ms, border-color 280ms;
+                    transition: color 280ms, background 280ms, border-color 280ms;
+                    cursor: pointer;
+                    color: var(--light-red-color);
+                }
+                button:hover{
+                    border-color: transparent;
+                    background: var(--light-red-color);
+                    color: var(--button-bg-color);
+                }
+            }
         }
     }
 }

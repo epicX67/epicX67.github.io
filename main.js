@@ -568,7 +568,7 @@ function getTime(T){
     }
 
     if(currSecond - T.second != 0){
-        return ((currSecond - T.second) + (currSecond - T.second == 1 ? " sec ago" : " secs ago"))
+        return ((Math.round(currSecond - T.second)) + (currSecond - T.second == 1 ? " sec ago" : " secs ago"))
     }
 
     //Year month date

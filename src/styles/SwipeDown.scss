@@ -1,0 +1,43 @@
+.swipeDown {
+  position: absolute;
+  width: 100vw;
+  height: 3rem;
+  bottom: 0;
+  margin-bottom: 3rem;
+  z-index: 999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    width: 1.5rem;
+    aspect-ratio: 3/6;
+    @supports not (aspect-ratio: 3 / 6) {
+      height: 1.5rem / 3 * 6;
+    }
+    border: 3px solid var(--clr-txtM);
+    border-radius: 1000px;
+    background: transparent;
+    outline: none;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0.3em;
+
+    div {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      @supports not (aspect-ratio: 1 / 1) {
+        height: 0.6rem;
+      }
+
+      background: var(--clr-txtM);
+      border-radius: 100%;
+    }
+  }
+}
+
+.swipe-down-mobile {
+  margin-bottom: 5rem;
+}

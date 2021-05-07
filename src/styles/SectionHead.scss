@@ -1,0 +1,35 @@
+.sectionHead {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 0vw;
+  height: 0vh;
+  z-index: 99;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+
+  //background: blue;
+
+  p {
+    position: absolute;
+    //background: red;
+    bottom: -90vh;
+    left: -10px;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    letter-spacing: 15px;
+    transform: rotate(-90deg) translate(1rem, -2rem);
+    &::after {
+      position: absolute;
+      left: 5%;
+      bottom: -30%;
+      content: "";
+      width: 20%;
+      height: 0.35rem;
+      background: var(--clr-accM);
+    }
+  }
+}

@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800&display=swap");
+@import "remixicon/fonts/remixicon.css";
+
+:root {
+  --clr-bg: #17181a;
+  --clr-shadow: #17181a34;
+
+  --clr-txtM: #f2f7ff;
+  --clr-txtS: hsla(217, 100%, 97%, 0.5);
+  --clr-txtT: hsla(217, 100%, 97%, 0.1);
+
+  --clr-accM: hsl(222, 63%, 62%);
+  --clr-acc2: hsl(160, 63%, 62%);
+  --clr-acc3: hsl(352, 63%, 62%);
+  --clr-acc4: hsl(51, 63%, 62%);
+
+  --font: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  cursor: url("./cursor.png"), auto;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+*::selection {
+  background: var(--clr-accM);
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar {
+  width: 0.8rem;
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  //padding: 1em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--clr-txtT);
+  border-radius: 100px;
+}
+
+body {
+  background: var(--clr-bg);
+  background-image: url("../assets/background.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  color: var(--clr-txtM);
+  font-family: var(--font);
+  overflow-x: hidden;
+  letter-spacing: 1px;
+}
+
+section {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  //background: var(--clr-bg);
+  display: grid;
+  place-content: center;
+}
+
+.blue-bg {
+  background: var(--clr-accM) !important;
+}
+
+.blue-border {
+  border-color: var(--clr-accM) !important;
+}
+
+.blue {
+  fill: var(--clr-accM) !important;
+  color: var(--clr-accM) !important;
+}
+
+.red-bg {
+  background: var(--clr-acc3) !important;
+  color: var(--clr-bg) !important;
+}
+
+.red-border {
+  border-color: var(--clr-acc3) !important;
+}
+
+.red {
+  fill: var(--clr-acc3) !important;
+  color: var(--clr-acc3) !important;
+}
+
+.green-bg {
+  background: var(--clr-acc2) !important;
+  color: var(--clr-bg) !important;
+}
+
+.green-border {
+  border-color: var(--clr-acc2) !important;
+}
+
+.green {
+  fill: var(--clr-acc2) !important;
+  color: var(--clr-acc2) !important;
+}
+
+.yellow-bg {
+  background: var(--clr-acc4) !important;
+  color: var(--clr-bg) !important;
+}
+
+.yellow-border {
+  border-color: var(--clr-acc4) !important;
+}
+
+.yellow {
+  fill: var(--clr-acc4) !important;
+  color: var(--clr-acc4) !important;
+}
+
+footer {
+  $logoSize: 1.5rem;
+  height: 4.5rem;
+  background: var(--clr-bg);
+  filter: brightness(1.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+
+  a {
+    display: block;
+    width: $logoSize;
+  }
+
+  svg {
+    width: $logoSize;
+    height: $logoSize;
+    filter: brightness(1.2);
+  }
+  i {
+    font-size: $logoSize + 0.5rem;
+  }
+
+  .remix {
+    color: var(--clr-acc3);
+  }
+  .react {
+    color: var(--clr-accM);
+  }
+
+  p {
+    height: $logoSize;
+    font-size: 0.9rem;
+    color: var(--clr-txtS);
+    user-select: none;
+  }
+}

@@ -138,6 +138,14 @@ footer {
   a {
     display: block;
     width: $logoSize;
+    transition: filter 280ms, transform 280ms;
+    &:hover {
+      filter: brightness(1.5);
+    }
+
+    &:active {
+      transform: scale(0.8);
+    }
   }
 
   svg {

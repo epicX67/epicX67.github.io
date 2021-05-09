@@ -359,8 +359,9 @@ function App() {
                   animate={showAbout ? { y: 0, opacity: 1 } : {}}
                   transition={{ duration: 0.5, delay: 0.2, type: "tween" }}
                 >
-                  Heeeeelo I am Sourav Gain. I love to explore new technologies.{" "}
-                  <br></br>I am pursuing BCA from <br></br>
+                  Hi! I am Sourav Gain from Kolkata. <br></br>I love to explore
+                  new technologies. <br></br>Currently I am pursuing BCA from{" "}
+                  <br></br>
                   <span>EMINENT COLLEGE OF MANAGEMENT AND TECHNOLOGY.</span>
                 </motion.p>
                 <motion.button

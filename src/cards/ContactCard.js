@@ -12,8 +12,9 @@ export default function ContactCard({ deviceType = "mobile" }) {
   const [message, setMessage] = useState("");
 
   const sendMessage = async (e) => {
-    const ret = true;
     e.preventDefault();
+
+    if (name.trim() === "" || message.trim() === "") return;
 
     setIdle(false);
     await sleep(200);
@@ -129,7 +130,7 @@ export default function ContactCard({ deviceType = "mobile" }) {
           <div>
             <i className="ri-chat-smile-line"></i>
           </div>
-          <h3>Thank You for contact with me</h3>
+          <h3>Thank You for contacting me</h3>
         </motion.div>
 
         <motion.div
@@ -156,6 +157,7 @@ export default function ContactCard({ deviceType = "mobile" }) {
           id="fName"
           onChange={(e) => setName(e.target.value)}
           value={name}
+          required={true}
         ></input>
         <textarea
           id="fMessage"
@@ -163,6 +165,7 @@ export default function ContactCard({ deviceType = "mobile" }) {
           placeholder="Write your message"
           onChange={(e) => setMessage(e.target.value)}
           value={message}
+          required={true}
         ></textarea>
         <input type="submit" value="Send" />
       </div>

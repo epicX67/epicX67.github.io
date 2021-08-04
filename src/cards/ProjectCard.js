@@ -73,12 +73,12 @@ export default function ProjectCard({ deviceType }) {
         {
           name: "Guide",
           url:
-            "https://github.com/epicX67/documents_KrunkerResourceSwapper/blob/master/README.md",
+            "https://github.com/MOF1/krunker_css",
         },
         {
           name: "Download",
           url:
-            "https://github.com/epicX67/documents_KrunkerResourceSwapper/archive/refs/heads/master.zip",
+            "https://github.com/MOF1/krunker_css/releases",
         },
       ],
     },

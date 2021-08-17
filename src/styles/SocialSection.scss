@@ -1,5 +1,7 @@
 $card-Ttype: 500ms cubic-bezier(0.87, 0.07, 0.37, 0.97);
 .social_section {
+  min-height: unset;
+  margin: 3rem 0rem;
   .container {
     //@error: red;
     //max-width: 1200px;

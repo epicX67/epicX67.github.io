@@ -101,7 +101,7 @@ export default function ProjectCard({ deviceType }) {
       color: "green",
       btns: [
         {
-          name: "Download from NPM",
+          name: "Install from NPM",
           url: "https://www.npmjs.com/package/szip",
         },
         {

@@ -3,6 +3,7 @@ import { React, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import NumberSelectors from "./subComponents/NumberSelectors";
 import Shrp from "./subComponents/Shrp";
+import Szip from "./subComponents/Szip";
 import Ncloud from "./subComponents/Ncloud";
 import Krunkercss from "./subComponents/Krunkercss";
 import { sleep } from "../utils/utils";
@@ -74,6 +75,23 @@ export default function ProjectCard({ deviceType }) {
         {
           name: "Download",
           url: "https://github.com/MOF1/krunker_css/releases",
+        },
+      ],
+    },
+    {
+      title: "Szip",
+      info: "An event based 7zip wrapper for nodejs. Most of the functions in this package are event based. Non event functions are also available.",
+      logo: <Szip className="green" />,
+      show: false,
+      color: "green",
+      btns: [
+        {
+          name: "Download from NPM",
+          url: "https://www.npmjs.com/package/szip",
+        },
+        {
+          name: "Source",
+          url: "https://github.com/epicX67/szip",
         },
       ],
     },

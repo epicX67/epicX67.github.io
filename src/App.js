@@ -349,8 +349,8 @@ function App() {
           <div className="bg2"></div>
           <img className="logo" src={logo} alt="Logo" />
           <p className="logo-down">
-            <span className="separator">Student</span>{" "}
-            <span className="separator">.</span> Noob Gamer
+            <span className="separator">This is my</span>{" "}
+            <span className="separator">.</span> Portfolio
           </p>
           <AnimatePresence>
             {showSlider ? <SwipeDown deviceType={deviceType} /> : null}
@@ -399,8 +399,8 @@ function App() {
                   transition={{ duration: 0.5, delay: 0.2, type: "tween" }}
                 >
                   Hi! I am Sourav Gain from Kolkata. <br></br>I love to explore
-                  new technologies. <br></br>Currently I am pursuing BCA from{" "}
-                  <br></br>
+                  new technologies. <br></br>Recently I completed graduation on
+                  BCA (Computer Application) from <br></br>
                   <span>EMINENT COLLEGE OF MANAGEMENT AND TECHNOLOGY.</span>
                 </motion.p>
                 <motion.button

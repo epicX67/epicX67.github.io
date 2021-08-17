@@ -14,6 +14,7 @@
   --clr-acc2: hsl(160, 63%, 62%);
   --clr-acc3: hsl(352, 63%, 62%);
   --clr-acc4: hsl(51, 63%, 62%);
+  --clr-acc5: hsl(249, 63%, 62%);
 
   --font: "Poppins", sans-serif;
 }
@@ -82,6 +83,19 @@ section {
 .blue {
   fill: var(--clr-accM) !important;
   color: var(--clr-accM) !important;
+}
+
+.purple-bg {
+  background: var(--clr-acc5) !important;
+}
+
+.purple-border {
+  border-color: var(--clr-acc5) !important;
+}
+
+.purple {
+  fill: var(--clr-acc5) !important;
+  color: var(--clr-acc5) !important;
 }
 
 .red-bg {

@@ -217,6 +217,14 @@ $Ttype: 580ms 100ms cubic-bezier(0.87, 0.07, 0.37, 0.97);
             }
           }
 
+          .purple-a {
+            color: var(--clr-acc5);
+            &:hover {
+              color: var(--clr-bg);
+              background: var(--clr-acc5);
+            }
+          }
+
           .green-a {
             color: var(--clr-acc2);
             &:hover {
@@ -469,6 +477,14 @@ $Ttype: 580ms 100ms cubic-bezier(0.87, 0.07, 0.37, 0.97);
             &:hover {
               color: var(--clr-bg);
               background: var(--clr-accM);
+            }
+          }
+
+          .purple-a {
+            color: var(--clr-acc5);
+            &:hover {
+              color: var(--clr-bg);
+              background: var(--clr-acc5);
             }
           }
 

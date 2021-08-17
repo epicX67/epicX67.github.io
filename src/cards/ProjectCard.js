@@ -7,6 +7,7 @@ import Szip from "./subComponents/Szip";
 import Ncloud from "./subComponents/Ncloud";
 import Krunkercss from "./subComponents/Krunkercss";
 import { sleep } from "../utils/utils";
+import Cohelp from "./subComponents/Cohelp";
 
 export default function ProjectCard({ deviceType }) {
   const [isRight, setRight] = useState(true);
@@ -45,6 +46,20 @@ export default function ProjectCard({ deviceType }) {
         {
           name: "Source code",
           url: "https://github.com/project-ncloud",
+        },
+      ],
+    },
+
+    {
+      title: "CoHelp",
+      info: "A platform where anyone can book for doctors appointments, oxygen, vaccine, beds, and other emergency services.",
+      logo: <Cohelp className="purple" />,
+      show: false,
+      color: "purple",
+      btns: [
+        {
+          name: "Source",
+          url: "https://github.com/Co-Help",
         },
       ],
     },

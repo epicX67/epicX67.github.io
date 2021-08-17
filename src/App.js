@@ -1,9 +1,15 @@
 import "./styles/App.scss";
 import "./styles/SocialSection.scss";
 import "./styles/WorkSection.scss";
+import "./styles/WebsitesSection.scss";
 import "./styles/AboutSection.scss";
 import "./styles/HomeSection.scss";
 import logo from "./assets/logo.svg";
+import cover_ac from "./assets/cover_a&c.png";
+import cover_blog from "./assets/cover_blog.png";
+import cover_chem from "./assets/cover_chem.png";
+import cover_fc2 from "./assets/cover_fc2.png";
+import cover_mof1 from "./assets/cover_mof1.png";
 import Splash from "./components/Splash";
 import SocialCard from "./cards/SocialCard";
 import ContactCard from "./cards/ContactCard";
@@ -15,6 +21,35 @@ import SwipeDown from "./components/SwipeDown";
 import Hamburger from "./components/Hamburger";
 import { Link } from "react-scroll";
 import Motion from "./cards/subComponents/Motion";
+import WebsiteCard from "./cards/WebsiteCard";
+
+const designs = [
+  {
+    name: "MOF1 clan page",
+    cover: cover_mof1,
+    url: "https://MOF1.github.io",
+  },
+  {
+    name: "Food product site",
+    cover: cover_ac,
+    url: "https://ac-food-delight.github.io",
+  },
+  {
+    name: "Far Cry 2 page",
+    cover: cover_fc2,
+    url: "https://farcry2.github.io/",
+  },
+  {
+    name: "Markdown blog",
+    cover: cover_blog,
+    url: "https://epicXHub.github.io",
+  },
+  {
+    name: "Chemical site",
+    cover: cover_chem,
+    url: "https://xperiement.github.io/nbchem/",
+  },
+];
 
 function App() {
   const [deviceType, setDeviceType] = useState("desktop");
@@ -23,6 +58,7 @@ function App() {
 
   const [showAbout, setAbout] = useState(false);
   const [showProjects, setProjects] = useState(false);
+  const [showDesigns, setDesigns] = useState(false);
   const [showSocial, setSocial] = useState(false);
 
   const hideNav = () => {
@@ -69,6 +105,9 @@ function App() {
       },
     },
   };
+
+  const designVariants = socialVariants;
+  const designItemVariants = socialItemVariants;
 
   const navVariants = {
     hidden: { y: -10, opacity: 0 },
@@ -421,6 +460,51 @@ function App() {
             <ProjectCard deviceType={deviceType} />
           </div>
         </motion.section>
+      </InView>
+
+      <InView
+        as="div"
+        onChange={(inView, entry) => {
+          if (inView) {
+            setDesigns(true);
+          }
+        }}
+        threshold={0.1}
+        triggerOnce={true}
+      >
+        <section id="section69" className="websites_section">
+          <div
+            className={
+              deviceType !== "mobile"
+                ? "head-container"
+                : "head-container-mobile"
+            }
+          >
+            <div className="section-head">
+              <h1>Designs</h1>
+              <p>These are all the websites created by me</p>
+            </div>
+          </div>
+          <div className="container">
+            <motion.div
+              className="grid"
+              variants={designVariants}
+              initial="hidden"
+              animate={showDesigns ? "show" : "hidden"}
+            >
+              {designs.map((item) => (
+                <motion.div variants={designItemVariants}>
+                  <WebsiteCard
+                    coverUrl={item.cover}
+                    name={item.name}
+                    url={item.url}
+                    key={item.url}
+                  />
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
       </InView>
 
       <InView

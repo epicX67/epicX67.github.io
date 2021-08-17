@@ -3,6 +3,7 @@
 
 :root {
   --clr-bg: #17181a;
+  --clr-bg-st: rgba(23, 24, 26, 60%);
   --clr-shadow: #17181a34;
 
   --clr-txtM: #f2f7ff;
@@ -54,7 +55,7 @@ body {
   background: var(--clr-bg);
   background-image: url("../assets/background.png");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center 60vh;
   color: var(--clr-txtM);
   font-family: var(--font);
   overflow-x: hidden;

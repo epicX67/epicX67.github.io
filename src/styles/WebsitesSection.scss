@@ -1,0 +1,94 @@
+$card-Ttype: 500ms cubic-bezier(0.87, 0.07, 0.37, 0.97);
+.websites_section {
+  .container {
+    //@error: red;
+    //max-width: 1200px;
+    min-height: unset;
+    height: min-content !important;
+    padding: 4rem 4rem;
+    //background: blue;
+    // display: flex;
+    // flex-direction: column;
+  }
+
+  .grid {
+    //background: blue;
+    //height: min-content;
+    $cardSize: 23.93rem;
+    $borderRadius: 7px;
+    $mContainerHeight: 37%;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, $cardSize);
+    place-content: center;
+    width: 100%;
+    gap: 4rem;
+
+    .mContainer {
+      width: $cardSize;
+      //height: calc(calc($cardSize / 16) * 9);
+      aspect-ratio: 16 / 9;
+      position: relative;
+      border-radius: $borderRadius;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.336);
+      transition: transform 300ms;
+
+      &:hover {
+        //transform: translateY(-5px);
+      }
+      .cover {
+        height: calc(calc(23.93rem / 16) * 7);
+        object-fit: cover;
+        width: 100%;
+        border-radius: $borderRadius $borderRadius 0px 0px;
+      }
+
+      .sContainer {
+        z-index: 1;
+        background: var(--clr-bg);
+        min-height: 4rem;
+        width: 100%;
+        border-radius: 0px 0px $borderRadius $borderRadius;
+        //backdrop-filter: blur(20px);
+        filter: brightness(1.1);
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+      }
+
+      h1 {
+        font-weight: 600;
+        letter-spacing: 2px;
+        font-size: 1.4rem;
+        width: fit-content;
+      }
+
+      .urlbtn {
+        background: transparent;
+        border: 2px solid var(--clr-txtT);
+        aspect-ratio: 1 / 1;
+        height: 3rem;
+        border-radius: 100px;
+        display: grid;
+        place-content: center;
+        transition: background 400ms;
+        cursor: pointer;
+
+        &:hover {
+          background: var(--clr-txtT);
+        }
+
+        i {
+          color: var(--clr-txtM);
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+}

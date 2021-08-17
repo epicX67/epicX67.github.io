@@ -14,8 +14,7 @@ export default function ProjectCard({ deviceType }) {
   const [cards, setCard] = useState([
     {
       title: "SHRP",
-      info:
-        "Skyhawk recovery project (SHRP) is a android custom recovery project which is based on Letest TWRP.",
+      info: "Skyhawk recovery project (SHRP) is a android custom recovery project which is based on latest TWRP.",
       logo: <Shrp className="blue" />,
       show: true,
       color: "blue",
@@ -33,16 +32,14 @@ export default function ProjectCard({ deviceType }) {
 
     {
       title: "Project Ncloud",
-      info:
-        "Scalable Network Attached Storage system for raspberry pi and for other linux distros",
+      info: "Scalable Network Attached Storage system for raspberry pi and for other linux distros",
       logo: <Ncloud className="red" />,
       show: false,
       color: "red",
       btns: [
         {
           name: "Get started",
-          url:
-            "https://github.com/project-ncloud/get_started/blob/main/README.md",
+          url: "https://github.com/project-ncloud/get_started/blob/main/README.md",
         },
         {
           name: "Source code",
@@ -65,20 +62,18 @@ export default function ProjectCard({ deviceType }) {
     // },
     {
       title: "MOF1 Krunker CSS",
-      info: "Unique krunker CSS for krunker official client & chrome.",
+      info: "Unique krunker CSS for official client & chrome.",
       logo: <Krunkercss className="yellow" />,
       show: false,
       color: "yellow",
       btns: [
         {
           name: "Guide",
-          url:
-            "https://github.com/MOF1/krunker_css",
+          url: "https://github.com/MOF1/krunker_css",
         },
         {
           name: "Download",
-          url:
-            "https://github.com/MOF1/krunker_css/releases",
+          url: "https://github.com/MOF1/krunker_css/releases",
         },
       ],
     },

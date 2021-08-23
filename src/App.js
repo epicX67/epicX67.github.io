@@ -1,10 +1,26 @@
 import "./styles/App.scss";
+import "./styles/SkillsSection.scss";
 import "./styles/SocialSection.scss";
 import "./styles/WorkSection.scss";
 import "./styles/WebsitesSection.scss";
 import "./styles/AboutSection.scss";
 import "./styles/HomeSection.scss";
 import logo from "./assets/logo.svg";
+import cover_skill from "./assets/cover_skill.svg";
+import cover_skill2 from "./assets/cover_skill2.svg";
+import cover_skill3 from "./assets/cover_skill3.svg";
+import cover_skill4 from "./assets/cover_skill4.svg";
+import cover_skill5 from "./assets/cover_skill5.svg";
+import cover_skill6 from "./assets/cover_skill6.svg";
+import cover_skill7 from "./assets/cover_skill7.svg";
+import cover_skill8 from "./assets/cover_skill8.svg";
+import java from "./assets/skills/java.svg";
+import javascript from "./assets/skills/js.svg";
+import node from "./assets/skills/node.svg";
+import mongoDB from "./assets/skills/mongo.svg";
+import sass from "./assets/skills/sass.svg";
+import python from "./assets/skills/python.svg";
+import framermotion from "./assets/skills/framermotion.svg";
 import cover_ac from "./assets/cover_a&c.png";
 import cover_blog from "./assets/cover_blog.png";
 import cover_chem from "./assets/cover_chem.png";
@@ -22,6 +38,7 @@ import Hamburger from "./components/Hamburger";
 import { Link } from "react-scroll";
 import Motion from "./cards/subComponents/Motion";
 import WebsiteCard from "./cards/WebsiteCard";
+import SkillCard from "./cards/SkillCard";
 
 const designs = [
   {
@@ -51,12 +68,87 @@ const designs = [
   },
 ];
 
+const skills = [
+  {
+    name: "Python",
+    type: "Language",
+    cover: cover_skill,
+    icon: python,
+    svg_icon: true,
+    icon_position: "top right",
+    info_position: "bottom left",
+  },
+  {
+    name: "Javascript",
+    type: "Language",
+    cover: cover_skill2,
+    icon: javascript,
+    svg_icon: true,
+    icon_position: "top left",
+    info_position: "bottom right",
+  },
+  {
+    name: "Scss",
+    type: "Language",
+    cover: cover_skill3,
+    icon: sass,
+    svg_icon: true,
+    icon_position: "bottom left",
+    info_position: "top right",
+  },
+  {
+    name: "Java",
+    type: "Language",
+    cover: cover_skill4,
+    icon: java,
+    svg_icon: true,
+    icon_position: "bottom right",
+    info_position: "top left",
+  },
+  {
+    name: "Node",
+    type: "Javascript Runtime",
+    cover: cover_skill5,
+    icon: node,
+    svg_icon: true,
+    icon_position: "top right",
+    info_position: "bottom left",
+  },
+  {
+    name: "React",
+    type: "Framework",
+    cover: cover_skill6,
+    icon: "ri-reactjs-fill",
+    icon_position: "top left",
+    info_position: "bottom right",
+  },
+  {
+    name: "Motion",
+    type: "React Animation Library",
+    cover: cover_skill8,
+    icon: framermotion,
+    svg_icon: true,
+    icon_position: "bottom right",
+    info_position: "top left",
+  },
+  {
+    name: "MongoDB",
+    type: "Database",
+    cover: cover_skill7,
+    icon: mongoDB,
+    svg_icon: true,
+    icon_position: "top left",
+    info_position: "bottom right",
+  },
+];
+
 function App() {
   const [deviceType, setDeviceType] = useState("desktop");
   const [showNav, setNav] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
 
   const [showAbout, setAbout] = useState(false);
+  const [showSkills, setSkills] = useState(false);
   const [showProjects, setProjects] = useState(false);
   const [showDesigns, setDesigns] = useState(false);
   const [showSocial, setSocial] = useState(false);
@@ -108,6 +200,8 @@ function App() {
 
   const designVariants = socialVariants;
   const designItemVariants = socialItemVariants;
+  const skillVariants = socialVariants;
+  const skillItemVariants = socialItemVariants;
 
   const navVariants = {
     hidden: { y: -10, opacity: 0 },
@@ -418,6 +512,55 @@ function App() {
 
           <div className="bg3"></div>
           <div className="bg4"></div>
+        </section>
+      </InView>
+
+      <InView
+        as="div"
+        onChange={(inView, entry) => {
+          if (inView) {
+            setSkills(true);
+          }
+        }}
+        threshold={0.1}
+        triggerOnce={true}
+      >
+        <section id="section420" className="skills_section">
+          <div
+            className={
+              deviceType !== "mobile"
+                ? "head-container"
+                : "head-container-mobile"
+            }
+          >
+            <div className="section-head">
+              <h1>Skills</h1>
+              <p>I have some programming skills which is mentioned below</p>
+            </div>
+          </div>
+          <div className="container">
+            <motion.div
+              className="grid"
+              variants={skillVariants}
+              initial="hidden"
+              animate={showSkills ? "show" : "hidden"}
+            >
+              {skills.map((item) => (
+                <motion.div variants={skillItemVariants}>
+                  <SkillCard
+                    key={item.name}
+                    cover={item.cover}
+                    icoPos={item.icon_position}
+                    infoPos={item.info_position}
+                    objIco={item.icon}
+                    name={item.name}
+                    type={item.type}
+                    rawsvg={item.svg_icon}
+                  />
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
         </section>
       </InView>
 

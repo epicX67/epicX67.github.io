@@ -26,6 +26,7 @@ import cover_blog from "./assets/cover_blog.png";
 import cover_chem from "./assets/cover_chem.png";
 import cover_fc2 from "./assets/cover_fc2.png";
 import cover_mof1 from "./assets/cover_mof1.png";
+import cover_agni from "./assets/cover_agni.png";
 import Splash from "./components/Splash";
 import SocialCard from "./cards/SocialCard";
 import ContactCard from "./cards/ContactCard";
@@ -65,6 +66,11 @@ const designs = [
     name: "Chemical site",
     cover: cover_chem,
     url: "https://xperiement.github.io/nbchem/",
+  },
+  {
+    name: "AGNi kernel site",
+    cover: cover_agni,
+    url: "https://xperiement.github.io/agni/#home",
   },
 ];
 

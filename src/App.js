@@ -482,7 +482,9 @@ function App() {
                 animate={showAbout ? { y: 0, rotate: -5, opacity: 1 } : {}}
                 transition={{ duration: 0.5, type: "tween" }}
                 className="img-wrapper"
-              ></motion.div>
+              >
+                <div></div>
+              </motion.div>
             </div>
             <div className="main-container">
               <div>

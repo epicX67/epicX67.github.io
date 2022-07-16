@@ -92,9 +92,9 @@ $Ttype: 580ms 100ms cubic-bezier(0.87, 0.07, 0.37, 0.97);
           height: 100%;
           border-radius: $bRX $bRX $bRX $bRX;
           .project-box {
-            @supports not (aspect-ratio: 1/1.2) {
+            width: 7rem;
+            @supports not (aspect-ratio: 1 / 1.2) {
               height: 50% * 1.1;
-              width: 7rem;
             }
             transform: translate(-50%, -100%);
           }
@@ -126,7 +126,7 @@ $Ttype: 580ms 100ms cubic-bezier(0.87, 0.07, 0.37, 0.97);
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          width: 50%;
+          width: 6.5rem;
           max-height: 8rem;
           aspect-ratio: 1/1.2;
 
@@ -392,7 +392,7 @@ $Ttype: 580ms 100ms cubic-bezier(0.87, 0.07, 0.37, 0.97);
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          width: 50%;
+          width: 7rem;
           max-height: 8rem;
           aspect-ratio: 1/1.2;
 

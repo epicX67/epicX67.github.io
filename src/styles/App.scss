@@ -19,15 +19,16 @@
 }
 
 @keyframes glow {
+  $sat: saturate(1.5) contrast(1.5);
   0% {
-    filter: unset;
+    filter: $sat;
   }
   50% {
-    filter: drop-shadow(0px 0px 20px #a1c3ff71) brightness(1.2);
+    filter:  $sat drop-shadow(0px 0px 20px #a1c3ff71) brightness(1.2);
   }
 
   100% {
-    filter: drop-shadow(0px 0px 20px #00000000) brightness(1);
+    filter:  $sat drop-shadow(0px 0px 20px #00000000) brightness(1);
   }
 }
 
